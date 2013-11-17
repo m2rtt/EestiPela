@@ -45,7 +45,7 @@ class Programm(QWidget):
         #do sth
     on_aaa = Signal()
     aaa = Property(str,wat,notify=on_aaa)
-
+    test = "kas github näitab"
 
     @Slot()
     def check_answer(self):
