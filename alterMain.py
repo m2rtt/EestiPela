@@ -12,7 +12,6 @@ from PySide.QtCore import *
 from PySide.QtDeclarative import QDeclarativeView
 
 
-
 def kysimusevaldkond(fail, kys_id):
     faililist = ["tyhi","kyssad\\ajalugu.lol","kyssad\\kultuur.lol","kyssad\\loodus.lol",
                  "kyssad\\geo.lol","kyssad\\sport.lol","kyssad\\varia.lol"]
@@ -33,8 +32,11 @@ def kysimusevaldkond(fail, kys_id):
 
 
 
-class Programm(QWidget):
+class Kysimus(QDeclarativeView):
 
+    def __init__(self):
+        super(Kysimus, self).__init__()
+        
     @Slot()
     def wat(self):
         x, y = kysimusevaldkond(randint(1,6),randint(1,10))
@@ -56,47 +58,40 @@ class Programm(QWidget):
     on_bbb = Signal()
     bbb = Property(bool,check_answer,notify=on_bbb)
 
-    def __init__(self):
-        super(Programm, self).__init__()
+
+class PeaAken(QDeclarativeView):
+   
+    def __init__(self, parent=None):
+        super(PeaAken, self).__init__(parent)
+        url = QUrl('MyElement.qml')
+        # Set the QML file and show
+        self.setSource(url)
+        self.rootContext().setContextProperty('proge', self)
+        self.center()
+        self.setFixedSize(500,340)
+        tiitel = "Eesti mang"
+        self.setWindowTitle(tiitel) #millegipärast täpitäht ei tööta        
         
-        self.initUI()
-
-
-
+    def center(self):
         
-
+        qr = self.frameGeometry()
+        cp = QDesktopWidget().availableGeometry().center()
+        qr.moveCenter(cp)
+        self.move(qr.topLeft())
     
 
-
-def center(proge):
-        
-    qr = proge.frameGeometry()
-    cp = QDesktopWidget().availableGeometry().center()
-    qr.moveCenter(cp)
-    proge.move(qr.topLeft())
-
-def main():
-    
-    app = QApplication(sys.argv)
-    view = QDeclarativeView()
-    # Create an URL to the QML file
-    url = QUrl('MyElement.qml')
-    # Set the QML file and show
-    view.setSource(url)
-    view.rootContext().setContextProperty('proge', view)
-    center(view)
-    view.setFixedSize(500,340)
-    tiitel = "Eesti mang"
-    view.setWindowTitle(tiitel) #millegipärast täpitäht ei tööta
-    view.show()
-    app.exec_()
-
-    sys.exit()
 
 
 if __name__ == '__main__':
-    main()
+    
+    app = QApplication(sys.argv)
+    
+    aken = PeaAken()
+    aken.show()
+    
+    app.exec_()
 
+    sys.exit()
 
 
 
