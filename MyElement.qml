@@ -63,10 +63,10 @@ Item {
 		MouseArea {
 			anchors.fill: parent
 			onClicked: {
-				proge.wat()
 				content.opacity = 0
 				vastus.opacity = 0
-				logo.opacity = 1
+				ok.opacity = 0
+				edasi.opacity = 0
 				mangi.opacity = 1
 				abi.opacity = 1
 			}
@@ -110,6 +110,8 @@ Item {
                 proge.check_answer()
 
 
+
+
             }
         }
     }
@@ -125,6 +127,7 @@ Item {
 			onClicked: {
 				ala.opacity = 1
 				ala.text = " "+proge.aaa
+				vastus.text = ''
 			}
 		}
 
