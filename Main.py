@@ -10,7 +10,7 @@ import sys
 from PySide.QtGui import *
 from PySide.QtCore import *
 from PySide.QtDeclarative import QDeclarativeView
-import MyElement.qml
+
 
 
 def kysimusevaldkond(fail, kys_id):
@@ -39,13 +39,13 @@ class Programm(QWidget):
     def wat(self):
         x, y = kysimusevaldkond(randint(1,6),randint(1,10))
         if len(x) > 77:
-            return x[:77]+"\n "+x[77:], y
+            return x[:77]+"\n "+x[77:]
         else:
-            return x, y
+            return x
         #do sth
     on_aaa = Signal()
     aaa = Property(str,wat,notify=on_aaa)
-    test = "kas github näitab"
+    test = "kas github nï¿½itab"
 
     @Slot()
     def check_answer(self):
