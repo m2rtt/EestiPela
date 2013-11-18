@@ -13,35 +13,31 @@ from PySide.QtDeclarative import *
 
 
 
+class Kysimus(QDeclarativeItem, QDeclarativeView):
 
-
-class Kysimus(QDeclarativeItem):
-
-    kysV2ljakutse = Signal()
     vasV2ljakutse = Signal()
-    
+    kysV2ljakutse = Signal() 
     def __init__(self):
         super(Kysimus, self).__init__()
+        global kysmaatriks, vasmaatriks
+        kysmaatriks, vasmaatriks = self.kysValdkond()
         
-    @Slot()
-    def wat(self):
-        x, y = kysimusevaldkond(randint(1,6),randint(1,10))
-        if len(x) > 77:
-            return x[:77]+"\n "+x[77:], y
-        else:
-            return x, y
-        #do sth
-    on_aaa = Signal()
-    aaa = Property(str,wat,notify=on_aaa)
+    def valiKysimus(self, kysmaatriks, vasmaatriks):
+        teemanr = randint(0,len(kysmaatriks))
+        kysnr = randint(0,len(kysmaatriks[teemanr]))
+        return kysmaatriks[teemanr][kysnr],vasmaatriks[teemanr][kysnr]
+    
+   
+    def kysimusToGUI(self):
+        x,y = self.valiKysimus(kysmaatriks, vasmaatriks)
+        return x
 
-    @Slot()
-    def check_answer(self):
-        if y in vastus.SelectAll():
-            return True
-        else:
-            return False
-    on_bbb = Signal()
-    bbb = Property(bool,check_answer,notify=on_bbb)
+    valikys = Property(str,kysimusToGUI,notify=kysV2ljakutse)          
+
+    
+    def kontrolliVastus(self):
+        self.valiKysimus()
+
 
     def kysValdkond(self):
         faililist = ["tyhi","kyssad\\ajalugu.lol","kyssad\\kultuur.lol","kyssad\\loodus.lol",
@@ -60,7 +56,7 @@ class Kysimus(QDeclarativeItem):
             f.close()
             kysimusmaatriks.append(kysimuslist)
             vastusmaatriks.append(vastuslist)
-        return print(kysimusmaatriks, vastusmaatriks)
+        return kysimusmaatriks, vastusmaatriks
 
     # valdkonnad:
     # 1 - ajalugu, 2 - kultuur, 3 - loodus, 4 - geograafia, 5 - sport, 6 - varia
@@ -68,13 +64,17 @@ class Kysimus(QDeclarativeItem):
 
 
 class PeaAken(QDeclarativeView):
-   
+
     def __init__(self, parent=None):
         super(PeaAken, self).__init__(parent)
         url = QUrl('MyElement.qml')
-        # Set the QML file and show
-        self.setSource(url)
+        self.kysimus = Kysimus()
+        #self.rootContext().setContextProperty('kysimus', Kysimus)
         self.rootContext().setContextProperty('proge', self)
+        self.register = qmlRegisterType(Kysimus, "alterMain", 1, 0, "Kysimus")
+        
+        self.setSource(url)
+           
         self.center()
         self.setFixedSize(500,340)
         tiitel = "Eesti mang"
@@ -96,7 +96,6 @@ if __name__ == '__main__':
     
     aken = PeaAken()
     aken.show()
-    
     app.exec_()
 
     sys.exit()

@@ -1,5 +1,7 @@
 ﻿
 import QtQuick 1.0
+import alterMain 1.0
+
 Item {
     width:500
     height:340
@@ -80,12 +82,10 @@ Item {
         y: 41
         opacity: 0
         Text {
-			id: ala
-			opacity: 0
-			text: "aaaaa"
+			id: kysimusetekst
+			opacity: 1
+			
 			anchors.fill: parent
-			font.pixelSize: 14
-			color: 'black'
 		}
 
 
@@ -127,8 +127,8 @@ Item {
 		MouseArea {
 			anchors.fill: parent
 			onClicked: {
-				ala.opacity = 1
-				ala.text = " "+proge.aaa
+				kysimusetekst.opacity = 1
+				kysimusetekst.text = proge.valikys
 				vastus.text = ''
 				vastus.opacity = 1
 
