@@ -13,7 +13,7 @@ from PySide.QtDeclarative import *
 
 
 
-class Kysimus(QDeclarativeItem, QDeclarativeView):
+class Kysimus(QDeclarativeItem, QObject):
 
     vasV2ljakutse = Signal()
     kysV2ljakutse = Signal() 
@@ -23,21 +23,20 @@ class Kysimus(QDeclarativeItem, QDeclarativeView):
         kysmaatriks, vasmaatriks = self.kysValdkond()
         
     def valiKysimus(self, kysmaatriks, vasmaatriks):
-        teemanr = randint(0,len(kysmaatriks))
-        kysnr = randint(0,len(kysmaatriks[teemanr]))
-        return kysmaatriks[teemanr][kysnr],vasmaatriks[teemanr][kysnr]
-    
+        teemanr = randint(0,len(kysmaatriks)-1)
+        kysnr = randint(0,len(kysmaatriks[teemanr])-1)
+        return teemanr, kysnr   
    
-    def kysimusToGUI(self):
+    def kysimusvastus(self):
         x,y = self.valiKysimus(kysmaatriks, vasmaatriks)
-        return x
-
-    valikys = Property(str,kysimusToGUI,notify=kysV2ljakutse)          
-
+        kysvaslist = []
+        kysvaslist.append(x)
+        kysvaslist.append(y)
+        return kysmaatriks[x][y]+"||"+vasmaatriks[x][y]
+        
     
-    def kontrolliVastus(self):
-        self.valiKysimus()
-
+    valikys = Property(str,kysimusvastus,notify=kysV2ljakutse)   
+    
 
     def kysValdkond(self):
         faililist = ["tyhi","kyssad\\ajalugu.lol","kyssad\\kultuur.lol","kyssad\\loodus.lol",
@@ -62,22 +61,21 @@ class Kysimus(QDeclarativeItem, QDeclarativeView):
     # 1 - ajalugu, 2 - kultuur, 3 - loodus, 4 - geograafia, 5 - sport, 6 - varia
 
 
-
 class PeaAken(QDeclarativeView):
 
     def __init__(self, parent=None):
         super(PeaAken, self).__init__(parent)
         url = QUrl('MyElement.qml')
         self.kysimus = Kysimus()
-        #self.rootContext().setContextProperty('kysimus', Kysimus)
+
         self.rootContext().setContextProperty('proge', self)
-        self.register = qmlRegisterType(Kysimus, "alterMain", 1, 0, "Kysimus")
+        self.rootContext().setContextProperty('kysimus', self.kysimus)
         
         self.setSource(url)
            
         self.center()
         self.setFixedSize(500,340)
-        tiitel = "Eesti mang"
+        tiitel = "Eesti mäng"
         self.setWindowTitle(tiitel) #millegipärast täpitäht ei tööta        
         
     def center(self):

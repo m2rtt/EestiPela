@@ -1,6 +1,6 @@
 ﻿
 import QtQuick 1.0
-import alterMain 1.0
+
 
 Item {
     width:500
@@ -83,12 +83,11 @@ Item {
         opacity: 0
         Text {
 			id: kysimusetekst
+			text: kysimus.valikys
 			opacity: 1
 			
 			anchors.fill: parent
 		}
-
-
     }
     TextInput{
         id: vastus
@@ -108,12 +107,8 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                vastus.opacity = 0
-                proge.check_answer()
-
-
-
-
+                vastus.opacity = 1
+                vastus.text = kysimus.valivas
             }
         }
     }
@@ -127,9 +122,11 @@ Item {
 		MouseArea {
 			anchors.fill: parent
 			onClicked: {
+				var kysvas = kysimus.valikys
+				var abc = kysvas.split("||")
 				kysimusetekst.opacity = 1
-				kysimusetekst.text = proge.valikys
-				vastus.text = ''
+				kysimusetekst.text = abc[0]
+				vastus.text = abc[1]
 				vastus.opacity = 1
 
 			}
