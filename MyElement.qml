@@ -51,6 +51,7 @@ Item {
                 abi.opacity = 0
                 mangi.opacity = 0
                 eesti_v2ike.opacity = 1
+                content.opacity = 1
             }
         }
     }
@@ -107,6 +108,7 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
+                vastus.opacity = 0
                 proge.check_answer()
 
 
@@ -128,6 +130,8 @@ Item {
 				ala.opacity = 1
 				ala.text = " "+proge.aaa
 				vastus.text = ''
+				vastus.opacity = 1
+
 			}
 		}
 
