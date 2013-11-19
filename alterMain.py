@@ -20,26 +20,33 @@ class Kysimus(QDeclarativeItem, QObject):
     def __init__(self):
         super(Kysimus, self).__init__()
         global kysmaatriks, vasmaatriks
+        global randteema, randkysimus
+        
         kysmaatriks, vasmaatriks = self.kysValdkond()
+        randteema, randkysimus = self.valiKysimus(kysmaatriks,vasmaatriks)
 
         
     def valiKysimus(self, kysmaatriks, vasmaatriks):
         teemanr = randint(0,len(kysmaatriks)-1)
         kysnr = randint(0,len(kysmaatriks[teemanr])-1)
-        return teemanr, kysnr   
+        return kysmaatriks[teemanr][kysnr],vasmaatriks[teemanr][kysnr]   
    
-    def kysimusvastus(self):
-        x,y = self.valiKysimus(kysmaatriks, vasmaatriks)
+    def kysimusvastus(self, randteema, randkysimus):    
         kysvaslist = []
-        kysvaslist.append(x)
-        kysvaslist.append(y)
-        #return kysvaslist
-        return kysmaatriks[x][y]+"||"+vasmaatriks[x][y]
-    def kysToGUI(self):
-        a = 1
-        
+        kysvaslist.append(randteema)
+        kysvaslist.append(randkysimus)
+        return kysvaslist
+        #return kysmaatriks[x][y]+"||"+vasmaatriks[x][y]
     
-    valikys = Property(str,kysimusvastus,notify=kysV2ljakutse)   
+    def kysToGUI(self):
+        list = self.kysimusvastus(randteema, randkysimus)
+        return list[0]
+    def vasToGUI(self):
+        list = self.kysimusvastus(randteema, randkysimus)
+        return list[1]        
+    
+    valikys = Property(str,kysToGUI,notify=kysV2ljakutse)
+    valivas = Property(str,vasToGUI,notify=vasV2ljakutse)   
     
 
     def kysValdkond(self):

@@ -108,7 +108,10 @@ Item {
             anchors.fill: parent
             onClicked: {
                 vastus.opacity = 1
-                vastus.text = edasi.abc[1]
+				if(vastus.text == kysimus.valivas){
+					vastus.text = "Õige"
+				}
+				else { vastus.text = "Vale" }
 				
             }
         }
@@ -123,10 +126,10 @@ Item {
 		MouseArea {
 			anchors.fill: parent
 			onClicked: {
-				var kysvas = kysimus.valikys
-				var abc = kysvas.split("||")
+				var kys = kysimus.valikys
 				kysimusetekst.opacity = 1
-				kysimusetekst.text = abc[0] + abc[1]
+				kysimusetekst.text = kys
+				vastus.text = kysimus.valivas
 				
 				vastus.opacity = 1
 
