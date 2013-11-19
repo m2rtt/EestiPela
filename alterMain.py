@@ -19,6 +19,7 @@ class Kysimus(QDeclarativeItem, QObject):
     kysV2ljakutse = Signal()
     genArv = Signal()
     kysteemaV2ljakutse=Signal()
+
     def __init__(self):
         super(Kysimus, self).__init__()
         global kysmaatriks, vasmaatriks

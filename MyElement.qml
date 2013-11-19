@@ -7,6 +7,7 @@ Item {
     property variant teemanimi: ''
     property variant oigedvastused: 0
     property variant valedvastused: 0
+    property variant oigevastus: ''
     Image {
         id: taust
         source: "images/layer_0.png"
@@ -56,6 +57,8 @@ Item {
                 mangi.opacity = 0
                 eesti_v2ike.opacity = 1
                 content.opacity = 1
+                kysimusetekst.text = " See on meie väike programmeerimisüritus, kus püüame imiteerida\n lauamängu EESTI MÄNG\n EDASI nupuga tuleb järgmine küsimus\n OK nupuga kinnitad vastuse ja väljastab kas Õige/Vale\n paremale tulevad teemade kaardid, mis teeninud oled\n all vasakul näitab õigete ja valede vastuste arvu"
+                kysimusetekst.opacity = 1
             }
         }
     }
@@ -74,6 +77,8 @@ Item {
 				edasi.opacity = 0
 				mangi.opacity = 1
 				abi.opacity = 1
+				logo.opacity = 1
+				eesti_v2ike.opacity = 0
 				kast.opacity = 0
 				geograafia.opacity = 0
 				varia.opacity = 0
@@ -81,6 +86,7 @@ Item {
 				sport.opacity = 0
 				kultuur.opacity = 0
 				ajalugu.opacity = 0
+				kysimusetekst.text = ''
 			}
 		}
     }
@@ -92,6 +98,7 @@ Item {
         opacity: 0
         Text {
 			id: kysimusetekst
+			font.pixelSize: 13
 			text: ''
 			opacity: 0
 			anchors.fill: parent
@@ -100,7 +107,7 @@ Item {
     TextInput{
         id: vastus
         x: 14
-        y: 90
+        y: 115
         opacity: 0
         font.pixelSize: 14
         focus: true
@@ -117,9 +124,11 @@ Item {
             onClicked: {
 
                 vastus.opacity = 1
-				if(vastus.text.toLowerCase().indexOf(kysimus.valivas.toLowerCase())!==-1){
+                oigevastus = kysimus.valivas
+				if(vastus.text.toLowerCase().indexOf(oigevastus.toLowerCase())!==-1){
 					vastus.text = "Õige"
                     oigedvastused = oigedvastused+1
+
 					if(teemanimi==="GEOGRAAFIA") {
 					geograafia.opacity = 1
 					}
@@ -139,7 +148,7 @@ Item {
 					loodus.opacity = 1
 					}
 				}
-				else { vastus.text = "Vale"
+				else { vastus.text = "VALE, õige vastus on "+oigevastus
 				       valedvastused = valedvastused+1
 				       }
 				
@@ -159,7 +168,7 @@ Item {
 			    vastus.text=''
 				kysimusetekst.opacity = 1
 				teemanimi = kysimus.kysteemanot
-				kysimusetekst.text = teemanimi+"\n"+"\n"+kysimus.valikys
+				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimus.valikys
 				vastus.opacity = 1
 				kast.opacity = 1
 			}
