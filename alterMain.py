@@ -16,7 +16,8 @@ from PySide.QtDeclarative import *
 class Kysimus(QDeclarativeItem, QObject):
 
     vasV2ljakutse = Signal()
-    kysV2ljakutse = Signal() 
+    kysV2ljakutse = Signal()
+    genArv = Signal() 
     def __init__(self):
         super(Kysimus, self).__init__()
         global kysmaatriks, vasmaatriks
@@ -24,25 +25,33 @@ class Kysimus(QDeclarativeItem, QObject):
         
         kysmaatriks, vasmaatriks = self.kysValdkond()
         randteema, randkysimus = self.valiKysimus(kysmaatriks,vasmaatriks)
-
+        
+    def genereeriArv(self):
+        randteema, randkysimus = self.valiKysimus(kysmaatriks,vasmaatriks)
+        return randteema, randkysimus
         
     def valiKysimus(self, kysmaatriks, vasmaatriks):
         teemanr = randint(0,len(kysmaatriks)-1)
         kysnr = randint(0,len(kysmaatriks[teemanr])-1)
-        return kysmaatriks[teemanr][kysnr],vasmaatriks[teemanr][kysnr]   
+        return teemanr, kysnr
+        #return kysmaatriks[teemanr][kysnr],vasmaatriks[teemanr][kysnr]   
    
-    def kysimusvastus(self, randteema, randkysimus):    
+    def kysimusvastus(self):    
         kysvaslist = []
-        kysvaslist.append(randteema)
-        kysvaslist.append(randkysimus)
+        kysvaslist.append(kysmaatriks[randteema][randkysimus])
+        kysvaslist.append(vasmaatriks[randteema][randkysimus])
+        
         return kysvaslist
         #return kysmaatriks[x][y]+"||"+vasmaatriks[x][y]
     
     def kysToGUI(self):
-        list = self.kysimusvastus(randteema, randkysimus)
+        list = self.kysimusvastus()
         return list[0]
+    
     def vasToGUI(self):
-        list = self.kysimusvastus(randteema, randkysimus)
+        list = self.kysimusvastus()
+        global randteema, randkysimus
+        randteema,randkysimus = self.genereeriArv()
         return list[1]        
     
     valikys = Property(str,kysToGUI,notify=kysV2ljakutse)
