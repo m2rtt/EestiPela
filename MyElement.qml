@@ -1,10 +1,12 @@
 ﻿
 import QtQuick 1.0
 
-
 Item {
     width:500
     height:340
+    property variant teemanimi: ''
+    property variant oigedvastused: 0
+    property variant valedvastused: 0
     Image {
         id: taust
         source: "images/layer_0.png"
@@ -72,6 +74,13 @@ Item {
 				edasi.opacity = 0
 				mangi.opacity = 1
 				abi.opacity = 1
+				kast.opacity = 0
+				geograafia.opacity = 0
+				varia.opacity = 0
+				loodus.opacity = 0
+				sport.opacity = 0
+				kultuur.opacity = 0
+				ajalugu.opacity = 0
 			}
 		}
     }
@@ -83,15 +92,14 @@ Item {
         opacity: 0
         Text {
 			id: kysimusetekst
-			text: kysimus.valikys
+			text: ''
 			opacity: 0
-			
 			anchors.fill: parent
 		}
     }
     TextInput{
         id: vastus
-        x: 20
+        x: 14
         y: 90
         opacity: 0
         font.pixelSize: 14
@@ -107,14 +115,33 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
+
                 vastus.opacity = 1
-				if(vastus.text.toLowerCase().indexOf(kysimus.valivas.toLowerCase())!=-1){
+				if(vastus.text.toLowerCase().indexOf(kysimus.valivas.toLowerCase())!==-1){
 					vastus.text = "Õige"
+                    oigedvastused = oigedvastused+1
+					if(teemanimi==="GEOGRAAFIA") {
+					geograafia.opacity = 1
+					}
+					else if (teemanimi==="KULTUUR") {
+					kultuur.opacity = 1
+					}
+					else if (teemanimi==="AJALUGU") {
+					ajalugu.opacity = 1
+					}
+					else if (teemanimi==="SPORT") {
+					sport.opacity = 1
+					}
+					else if (teemanimi==="VARIA") {
+					varia.opacity = 1
+					}
+					else if (teemanimi==="LOODUS") {
+					loodus.opacity = 1
+					}
 				}
-				else if(kysimus.valivas.toLowerCase().indexOf(vastus.text.toLowerCase())!=-1){
-					vastus.text = "Õige"
-				}
-				else { vastus.text = "Vale" }
+				else { vastus.text = "Vale"
+				       valedvastused = valedvastused+1
+				       }
 				
             }
         }
@@ -130,13 +157,75 @@ Item {
 			anchors.fill: parent
 			onClicked: {
 			    vastus.text=''
-				var kys = kysimus.valikys
 				kysimusetekst.opacity = 1
-				kysimusetekst.text = kysimus.kysteemanot+"\n"+"\n"+kys
+				teemanimi = kysimus.kysteemanot
+				kysimusetekst.text = teemanimi+"\n"+"\n"+kysimus.valikys
 				vastus.opacity = 1
-
-
+				kast.opacity = 1
 			}
+		}
+
+    }
+    Image {
+        id: kultuur
+        source: "images/kultuur.png"
+        x: 380
+        y: 85
+        opacity: 0
+
+    }
+    Image {
+        id: sport
+        source: "images/sport.png"
+        x: 380
+        y: 120
+        opacity: 0
+
+    }
+    Image {
+        id: geograafia
+        source: "images/geograafia.png"
+        x: 380
+        y: 155
+        opacity: 0
+
+    }
+    Image {
+        id: varia
+        source: "images/varia.png"
+        x: 380
+        y: 190
+        opacity: 0
+
+    }
+    Image {
+        id: loodus
+        source: "images/loodus.png"
+        x: 380
+        y: 225
+        opacity: 0
+
+    }
+    Image {
+        id: ajalugu
+        source: "images/ajalugu.png"
+        x: 380
+        y: 260
+        opacity: 0
+
+    }
+    Image {
+        id: kast
+        source: "images/kast.png"
+        x: 20
+        y: 250
+        opacity: 0
+        Text {
+			id: kastikiri
+			font.pixelSize: 15
+			text: "ÕIGEID: "+oigedvastused.toString()+"\n"+"VALESID: "+valedvastused.toString()
+			opacity: 1
+			anchors.fill: parent
 		}
 
     }

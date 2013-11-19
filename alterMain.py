@@ -23,6 +23,7 @@ class Kysimus(QDeclarativeItem, QObject):
         super(Kysimus, self).__init__()
         global kysmaatriks, vasmaatriks
         global randteema, randkysimus
+        global teema
         
         kysmaatriks, vasmaatriks = self.kysValdkond()
         randteema, randkysimus = self.valiKysimus(kysmaatriks,vasmaatriks)
@@ -47,17 +48,18 @@ class Kysimus(QDeclarativeItem, QObject):
 
     def kysteema(self):
         if randteema==0:
-            return "AJALUGU"
+            teema="AJALUGU"
         elif randteema==1:
-            return "KULTUUR"
+            teema="KULTUUR"
         elif randteema==2:
-            return "LOODUS"
+            teema="LOODUS"
         elif randteema==3:
-            return "GEOGRAAFIA"
+            teema="GEOGRAAFIA"
         elif randteema==4:
-            return "SPORT"
+            teema="SPORT"
         elif randteema==5:
-            return "VARIA"
+            teema="VARIA"
+        return teema
 
     kysteemanot=Property(str,kysteema,notify=kysteemaV2ljakutse)
     
