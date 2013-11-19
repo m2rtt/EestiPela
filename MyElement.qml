@@ -84,7 +84,7 @@ Item {
         Text {
 			id: kysimusetekst
 			text: kysimus.valikys
-			opacity: 1
+			opacity: 0
 			
 			anchors.fill: parent
 		}
@@ -108,7 +108,10 @@ Item {
             anchors.fill: parent
             onClicked: {
                 vastus.opacity = 1
-				if(vastus.text == kysimus.valivas){
+				if(vastus.text.toLowerCase().indexOf(kysimus.valivas.toLowerCase())!=-1){
+					vastus.text = "Õige"
+				}
+				else if(kysimus.valivas.toLowerCase().indexOf(vastus.text.toLowerCase())!=-1){
 					vastus.text = "Õige"
 				}
 				else { vastus.text = "Vale" }
@@ -126,12 +129,12 @@ Item {
 		MouseArea {
 			anchors.fill: parent
 			onClicked: {
+			    vastus.text=''
 				var kys = kysimus.valikys
 				kysimusetekst.opacity = 1
-				kysimusetekst.text = kys
-				vastus.text = kysimus.valivas
-				
+				kysimusetekst.text = kysimus.kysteemanot+"\n"+"\n"+kys
 				vastus.opacity = 1
+
 
 			}
 		}

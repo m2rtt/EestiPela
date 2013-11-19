@@ -17,7 +17,8 @@ class Kysimus(QDeclarativeItem, QObject):
 
     vasV2ljakutse = Signal()
     kysV2ljakutse = Signal()
-    genArv = Signal() 
+    genArv = Signal()
+    kysteemaV2ljakutse=Signal()
     def __init__(self):
         super(Kysimus, self).__init__()
         global kysmaatriks, vasmaatriks
@@ -43,6 +44,22 @@ class Kysimus(QDeclarativeItem, QObject):
         
         return kysvaslist
         #return kysmaatriks[x][y]+"||"+vasmaatriks[x][y]
+
+    def kysteema(self):
+        if randteema==0:
+            return "AJALUGU"
+        elif randteema==1:
+            return "KULTUUR"
+        elif randteema==2:
+            return "LOODUS"
+        elif randteema==3:
+            return "GEOGRAAFIA"
+        elif randteema==4:
+            return "SPORT"
+        elif randteema==5:
+            return "VARIA"
+
+    kysteemanot=Property(str,kysteema,notify=kysteemaV2ljakutse)
     
     def kysToGUI(self):
         list = self.kysimusvastus()
