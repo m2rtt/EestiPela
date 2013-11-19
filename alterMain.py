@@ -21,6 +21,7 @@ class Kysimus(QDeclarativeItem, QObject):
         super(Kysimus, self).__init__()
         global kysmaatriks, vasmaatriks
         kysmaatriks, vasmaatriks = self.kysValdkond()
+
         
     def valiKysimus(self, kysmaatriks, vasmaatriks):
         teemanr = randint(0,len(kysmaatriks)-1)
@@ -32,7 +33,10 @@ class Kysimus(QDeclarativeItem, QObject):
         kysvaslist = []
         kysvaslist.append(x)
         kysvaslist.append(y)
+        #return kysvaslist
         return kysmaatriks[x][y]+"||"+vasmaatriks[x][y]
+    def kysToGUI(self):
+        a = 1
         
     
     valikys = Property(str,kysimusvastus,notify=kysV2ljakutse)   

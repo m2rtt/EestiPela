@@ -108,7 +108,8 @@ Item {
             anchors.fill: parent
             onClicked: {
                 vastus.opacity = 1
-                vastus.text = kysimus.valivas
+                vastus.text = edasi.abc[1]
+				
             }
         }
     }
@@ -125,8 +126,8 @@ Item {
 				var kysvas = kysimus.valikys
 				var abc = kysvas.split("||")
 				kysimusetekst.opacity = 1
-				kysimusetekst.text = abc[0]
-				vastus.text = abc[1]
+				kysimusetekst.text = abc[0] + abc[1]
+				
 				vastus.opacity = 1
 
 			}
