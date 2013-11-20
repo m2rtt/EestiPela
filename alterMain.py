@@ -12,6 +12,11 @@ from PySide.QtCore import *
 from PySide.QtDeclarative import *
 
 
+class M2ngija(QObject):
+    def __init__(self):
+        super(M2ngija, self).__init__()
+
+
 
 class Kysimus(QDeclarativeItem, QObject):
 
@@ -25,9 +30,22 @@ class Kysimus(QDeclarativeItem, QObject):
         global kysmaatriks, vasmaatriks
         global randteema, randkysimus
         global teema
+        global olnudkyslist
+        global maatriksipikkus
+        
+        olnudkyslist = []
         
         kysmaatriks, vasmaatriks = self.kysValdkond()
         randteema, randkysimus = self.valiKysimus(kysmaatriks,vasmaatriks)
+        maatriksipikkus = self.maatriksiPikkus()
+
+    def maatriksiPikkus(self):
+        maatriksipikkus = 0
+        for i in kysmaatriks:
+            for j in i:
+                maatriksipikkus += 1
+        return maatriksipikkus
+                
         
     def genereeriArv(self):
         randteema, randkysimus = self.valiKysimus(kysmaatriks,vasmaatriks)
@@ -66,7 +84,18 @@ class Kysimus(QDeclarativeItem, QObject):
     
     def kysToGUI(self):
         list = self.kysimusvastus()
-        return list[0]
+        global olnudkyslist
+        
+        if len(olnudkyslist) == maatriksipikkus:
+            return "Küsimused on otsas, sorry!"
+        elif list[0] in olnudkyslist:
+            global randteema, randkysimus
+            randteema,randkysimus = self.genereeriArv()
+            print(list[0])            
+            return self.kysToGUI()
+        else:
+            olnudkyslist.append(list[0])
+            return list[0]
     
     def vasToGUI(self):
         list = self.kysimusvastus()
@@ -107,9 +136,11 @@ class PeaAken(QDeclarativeView):
         super(PeaAken, self).__init__(parent)
         url = QUrl('MyElement.qml')
         self.kysimus = Kysimus()
+        self.m2ngija = M2ngija()
 
         self.rootContext().setContextProperty('proge', self)
         self.rootContext().setContextProperty('kysimus', self.kysimus)
+        self.rootContext().setContextProperty('player', self.m2ngija)
         
         self.setSource(url)
            
