@@ -45,8 +45,7 @@ class Kysimus(QDeclarativeItem, QObject):
             for j in i:
                 maatriksipikkus += 1
         return maatriksipikkus
-                
-        
+                        
     def genereeriArv(self):
         randteema, randkysimus = self.valiKysimus(kysmaatriks,vasmaatriks)
         return randteema, randkysimus
