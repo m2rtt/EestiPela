@@ -122,10 +122,33 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-
+                edasi.opacity = 1
                 vastus.opacity = 1
                 oigevastus = kysimus.valivas
-				if(vastus.text.toLowerCase().indexOf(oigevastus.toLowerCase())!==-1){
+				if(vastus.text.toLowerCase().indexOf(oigevastus.toLowerCase())!=-1){
+					vastus.text = "Õige"
+                    oigedvastused = oigedvastused+1
+
+					if(teemanimi==="GEOGRAAFIA") {
+					geograafia.opacity = 1
+					}
+					else if (teemanimi==="KULTUUR") {
+					kultuur.opacity = 1
+					}
+					else if (teemanimi==="AJALUGU") {
+					ajalugu.opacity = 1
+					}
+					else if (teemanimi==="SPORT") {
+					sport.opacity = 1
+					}
+					else if (teemanimi==="VARIA") {
+					varia.opacity = 1
+					}
+					else if (teemanimi==="LOODUS") {
+					loodus.opacity = 1
+					}
+				}
+				else if(oigevastus.toLowerCase().indexOf(vastus.text.toLowerCase())!=-1){
 					vastus.text = "Õige"
                     oigedvastused = oigedvastused+1
 
@@ -171,6 +194,7 @@ Item {
 				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimus.valikys
 				vastus.opacity = 1
 				kast.opacity = 1
+				edasi.opacity = 0
 			}
 		}
 
