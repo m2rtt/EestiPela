@@ -8,6 +8,7 @@ Item {
     property variant oigedvastused: 0
     property variant valedvastused: 0
     property variant oigevastus: ''
+	property variant pikkus: 0
     Image {
         id: taust
         source: "images/layer_0.png"
@@ -125,6 +126,17 @@ Item {
                 edasi.opacity = 1
                 vastus.opacity = 1
                 oigevastus = kysimus.valivas
+				if(oigevastus.length > 4) {
+					if(oigevastus.length > 8) {
+						pikkus = 8
+					}
+					else {
+						pikkus = 4
+					}
+				}
+				else if(oigevastus.length <= 4) {
+					pikkus = 0
+				}
 				if(vastus.text.toLowerCase().indexOf(oigevastus.toLowerCase())!=-1){
 					vastus.text = "Õige"
                     oigedvastused = oigedvastused+1
@@ -148,7 +160,7 @@ Item {
 					loodus.opacity = 1
 					}
 				}
-				else if(oigevastus.toLowerCase().indexOf(vastus.text.toLowerCase())!=-1){
+				else if(oigevastus.toLowerCase().indexOf(vastus.text.toLowerCase())!=-1 && oigevastus.length - vastus.text.length <= pikkus){
 					vastus.text = "Õige"
                     oigedvastused = oigedvastused+1
 
