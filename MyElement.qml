@@ -9,6 +9,7 @@ Item {
     property variant valedvastused: 0
     property variant oigevastus: ''
 	property variant pikkus: 0
+	property int seconds : 0
     Image {
         id: taust
         source: "images/layer_0.png"
@@ -274,4 +275,28 @@ Item {
 		}
 
     }
+    Rectangle {
+        id: stopper
+        x: 400
+        y: 15
+        width : 40
+        height: 25
+
+        Text {
+
+                text: seconds
+                font.pointSize: 11
+                font.bold: true
+                font.family: "Arial"
+                anchors.centerIn: parent
+            }
+    }
+
+    Timer {
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: seconds++
+    }
 }
+

@@ -90,7 +90,6 @@ class Kysimus(QDeclarativeItem, QObject):
         elif list[0] in olnudkyslist:
             global randteema, randkysimus
             randteema,randkysimus = self.genereeriArv()
-            print(list[0])            
             return self.kysToGUI()
         else:
             olnudkyslist.append(list[0])
