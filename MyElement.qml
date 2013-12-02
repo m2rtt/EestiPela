@@ -140,6 +140,7 @@ Item {
 				}
 				if(vastus.text.toLowerCase().indexOf(oigevastus.toLowerCase())!=-1){
 					vastus.text = "Õige"
+					ok.opacity = 0
                     oigedvastused = oigedvastused+1
 
 					if(teemanimi==="GEOGRAAFIA") {
@@ -163,6 +164,7 @@ Item {
 				}
 				else if(oigevastus.toLowerCase().indexOf(vastus.text.toLowerCase())!=-1 && oigevastus.length - vastus.text.length <= pikkus){
 					vastus.text = "Õige"
+					ok.opacity = 0
                     oigedvastused = oigedvastused+1
 
 					if(teemanimi==="GEOGRAAFIA") {
@@ -186,6 +188,7 @@ Item {
 				}
 				else { vastus.text = "VALE, õige vastus on "+oigevastus
 				       valedvastused = valedvastused+1
+					   ok.opacity = 0
 				       }
 				
             }
@@ -202,6 +205,7 @@ Item {
 			anchors.fill: parent
 			onClicked: {
 			    vastus.text=''
+				ok.opacity = 1
 				kysimusetekst.opacity = 1
 				teemanimi = kysimus.kysteemanot
 				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimus.valikys
