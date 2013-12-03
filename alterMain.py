@@ -7,9 +7,9 @@
 
 from random import randint
 import sys
-from PySide.QtGui import *
-from PySide.QtCore import *
-from PySide.QtDeclarative import *
+from PySide.QtGui import QDesktopWidget, QApplication
+from PySide.QtCore import QObject, Signal, Property, QUrl
+from PySide.QtDeclarative import QDeclarativeItem, QDeclarativeView
 
 
 class M2ngija(QObject):
