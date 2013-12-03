@@ -7,9 +7,12 @@ Item {
     property variant teemanimi: ''
     property variant oigedvastused: 0
     property variant valedvastused: 0
+    property variant kysimusmuutujasse: ''
+    property variant kyspikkus: 0
     property variant oigevastus: ''
 	property variant pikkus: 0
 	property int seconds : 0
+	property int n: 0
     Image {
         id: taust
         source: "images/taust.png"
@@ -46,9 +49,22 @@ Item {
 			    vastus.text=''
 				kysimusetekst.opacity = 1
 				teemanimi = kysimus.kysteemanot
-				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimus.valikys
 				vastus.opacity = 1
 				kast.opacity = 1
+				kysimusmuutujasse=kysimus.valikys
+				kyspikkus = kysimusmuutujasse.lenght
+				if(kyspikkus <= 63){
+				kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse
+				}
+				else{
+				     if(kysimusmuutujasse.substring(50,63).indexOf(" ") != -1){
+				     n = kysimusmuutujasse.substring(50,63).indexOf(" ")
+                     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse.substring(0,50+n)+"\n"+" "+kysimusmuutujasse.substring(50+n,kyspikkus)
+				     }
+				     else{n = kysimusmuutujasse.substring(50,63).indexOf(" ")
+				     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse
+				     }
+				}
 
 			}
 		}	
@@ -128,10 +144,11 @@ Item {
     }
     TextInput{
         id: vastus
-        x: 14
-        y: 115
+        x: 24
+        y: 135
         opacity: 0
-        font.pixelSize: 14
+        font.pixelSize: 13
+        font.family: "Arial"
         focus: true
 
     }
@@ -252,6 +269,20 @@ Item {
 				kast.opacity = 1
 				edasi.opacity = 0
 				edasi_hall.opacity = 1
+				kysimusmuutujasse=kysimus.valikys
+				kyspikkus = kysimusmuutujasse.lenght
+				if(kyspikkus <= 63){
+				kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse
+				}
+				else{
+				     if(kysimusmuutujasse.substring(50,63).indexOf(" ") != -1){
+				     n = kysimusmuutujasse.substring(50,63).indexOf(" ")
+                     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse.substring(0,50+n)+"\n"+" "+kysimusmuutujasse.substring(50+n,kyspikkus)
+				     }
+				     else{n = kysimusmuutujasse.substring(50,63).indexOf(" ")
+				     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse
+				     }
+				}
 			}
 		}
 
