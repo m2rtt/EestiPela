@@ -259,7 +259,6 @@ Item {
 				ok_hall.opacity = 0
 				kysimusetekst.opacity = 1
 				teemanimi = kysimus.kysteemanot
-				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimus.valikys
 				vastus.opacity = 1
 				kast.opacity = 1
 				edasi.opacity = 0
