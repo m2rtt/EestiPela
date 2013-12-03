@@ -52,18 +52,13 @@ Item {
 				vastus.opacity = 1
 				kast.opacity = 1
 				kysimusmuutujasse=kysimus.valikys
-				kyspikkus = kysimusmuutujasse.lenght
+				kyspikkus = kysimusmuutujasse.length
 				if(kyspikkus <= 63){
 				kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse
 				}
 				else{
-				     if(kysimusmuutujasse.substring(50,63).indexOf(" ") != -1){
-				     n = kysimusmuutujasse.substring(50,63).indexOf(" ")
-                     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse.substring(0,50+n)+"\n"+" "+kysimusmuutujasse.substring(50+n,kyspikkus)
-				     }
-				     else{n = kysimusmuutujasse.substring(50,63).indexOf(" ")
-				     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse
-				     }
+				     n = kysimusmuutujasse.substring(47,63).indexOf(" ")
+                     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse.substring(0,47+n)+"\n"+" "+kysimusmuutujasse.substring(47+n,kyspikkus)
 				}
 
 			}
@@ -270,18 +265,13 @@ Item {
 				edasi.opacity = 0
 				edasi_hall.opacity = 1
 				kysimusmuutujasse=kysimus.valikys
-				kyspikkus = kysimusmuutujasse.lenght
+				kyspikkus = kysimusmuutujasse.length
 				if(kyspikkus <= 63){
 				kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse
 				}
 				else{
-				     if(kysimusmuutujasse.substring(50,63).indexOf(" ") != -1){
-				     n = kysimusmuutujasse.substring(50,63).indexOf(" ")
-                     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse.substring(0,50+n)+"\n"+" "+kysimusmuutujasse.substring(50+n,kyspikkus)
-				     }
-				     else{n = kysimusmuutujasse.substring(50,63).indexOf(" ")
-				     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse
-				     }
+				     n = kysimusmuutujasse.substring(47,63).indexOf(" ")
+                     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse.substring(0,47+n)+"\n"+" "+kysimusmuutujasse.substring(47+n,kyspikkus)
 				}
 			}
 		}
@@ -338,6 +328,7 @@ Item {
         Text {
 			id: kastikiri
 			font.pixelSize: 15
+			font.family: "Arial"
 			text: "ÕIGEID: "+oigedvastused.toString()+"\n"+"VALESID: "+valedvastused.toString()
 			opacity: 1
 			anchors.fill: parent
