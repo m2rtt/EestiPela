@@ -48,10 +48,10 @@ Item {
 				taimer.running = true
 			    vastus.text=''
 				kysimusetekst.opacity = 1
-				teemanimi = kysimus.kysteemanot
 				vastus.opacity = 1
 				kast.opacity = 1
 				kysimusmuutujasse=kysimus.valikys
+				teemanimi = kysimus.kysteemanot
 				kyspikkus = kysimusmuutujasse.length
 				if(kyspikkus <= 53){
 				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimusmuutujasse
@@ -301,12 +301,12 @@ Item {
 				ok.opacity = 1
 				ok_hall.opacity = 0
 				kysimusetekst.opacity = 1
-				teemanimi = kysimus.kysteemanot
 				vastus.opacity = 1
 				kast.opacity = 1
 				edasi.opacity = 0
 				edasi_hall.opacity = 1
 				kysimusmuutujasse=kysimus.valikys
+				teemanimi = kysimus.kysteemanot
 				kyspikkus = kysimusmuutujasse.length
 				if(kyspikkus <= 53){
 				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimusmuutujasse

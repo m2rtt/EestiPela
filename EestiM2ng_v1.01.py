@@ -29,14 +29,14 @@ class Kysimus(QDeclarativeItem, QObject):
         super(Kysimus, self).__init__()
         global kysmaatriks, vasmaatriks
         global randteema, randkysimus
-        global teema
+        #global teema
         global olnudkyslist
         global maatriksipikkus
         
         olnudkyslist = []
         
         kysmaatriks, vasmaatriks = self.kysValdkond()
-        randteema, randkysimus = self.valiKysimus(kysmaatriks,vasmaatriks)
+        randteema, randkysimus = self.valiKysimus()
         maatriksipikkus = self.maatriksiPikkus()
 
     def maatriksiPikkus(self):
@@ -46,13 +46,11 @@ class Kysimus(QDeclarativeItem, QObject):
                 maatriksipikkus += 1
         return maatriksipikkus
                         
-    def genereeriArv(self):
-        randteema, randkysimus = self.valiKysimus(kysmaatriks,vasmaatriks)
-        return randteema, randkysimus
         
-    def valiKysimus(self, kysmaatriks, vasmaatriks):
+    def valiKysimus(self):
         teemanr = randint(0,len(kysmaatriks)-1)
         kysnr = randint(0,len(kysmaatriks[teemanr])-1)
+        print(len(kysmaatriks[teemanr]))
         return teemanr, kysnr
         #return kysmaatriks[teemanr][kysnr],vasmaatriks[teemanr][kysnr]   
    
@@ -63,23 +61,7 @@ class Kysimus(QDeclarativeItem, QObject):
         
         return kysvaslist
         #return kysmaatriks[x][y]+"||"+vasmaatriks[x][y]
-
-    def kysteema(self):
-        if randteema==0:
-            teema="AJALUGU"
-        elif randteema==1:
-            teema="KULTUUR"
-        elif randteema==2:
-            teema="LOODUS"
-        elif randteema==3:
-            teema="GEOGRAAFIA"
-        elif randteema==4:
-            teema="SPORT"
-        elif randteema==5:
-            teema="VARIA"
-        return teema
-
-    kysteemanot=Property(str,kysteema,notify=kysteemaV2ljakutse)
+   
     
     def kysToGUI(self):
         list = self.kysimusvastus()
@@ -89,18 +71,36 @@ class Kysimus(QDeclarativeItem, QObject):
             return "Küsimused on otsas, sorry!"
         elif list[0] in olnudkyslist:
             global randteema, randkysimus
-            randteema,randkysimus = self.genereeriArv()
+            randteema,randkysimus = self.valiKysimus()
+            self.kysteema()
             return self.kysToGUI()
         else:
             olnudkyslist.append(list[0])
+            print(list,randteema,self.kysteema())
             return list[0]
     
     def vasToGUI(self):
         list = self.kysimusvastus()
         global randteema, randkysimus
-        randteema,randkysimus = self.genereeriArv()
-        return list[1]        
+        randteema,randkysimus = self.valiKysimus()
+        return list[1]
     
+    def kysteema(self):
+        if randteema==0:
+            teema = "AJALUGU"
+        elif randteema==1:
+            teema = "KULTUUR"
+        elif randteema==2:
+            teema = "LOODUS"
+        elif randteema==3:
+            teema = "GEOGRAAFIA"
+        elif randteema==4:
+            teema = "SPORT"
+        elif randteema==5:
+            teema = "VARIA"
+        return teema
+    
+    kysteemanot=Property(str,kysteema,notify=kysteemaV2ljakutse)
     valikys = Property(str,kysToGUI,notify=kysV2ljakutse)
     valivas = Property(str,vasToGUI,notify=vasV2ljakutse)   
     
