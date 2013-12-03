@@ -143,7 +143,7 @@ class PeaAken(QDeclarativeView):
         self.setSource(url)
            
         self.center()
-        self.setFixedSize(500,340)
+        self.setFixedSize(600,340)
         tiitel = "Eesti mäng"
         self.setWindowTitle(tiitel) #millegipärast täpitäht ei tööta        
         

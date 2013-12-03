@@ -2,7 +2,7 @@
 import QtQuick 1.0
 
 Item {
-    width:500
+    width:600
     height:340
     property variant teemanimi: ''
     property variant oigedvastused: 0
@@ -12,7 +12,7 @@ Item {
 	property int seconds : 0
     Image {
         id: taust
-        source: "images/layer_0.png"
+        source: "images/taust.png"
         x: 0
         y: 0
         opacity: 1
@@ -20,15 +20,15 @@ Item {
     Image {
         id: logo
         source: "images/eesti_mäng.png"
-        x: 120
-        y: 100
+        x: 0
+        y: 72
         opacity: 1
     }
     Image {
         id: mangi
-        source: "images/group_1.png"
-        x: 92
-        y: 228
+        source: "images/mängi.png"
+        x: 90
+        y: 230
         opacity: 1
 		MouseArea {
 			anchors.fill: parent
@@ -40,26 +40,24 @@ Item {
 				content.opacity = 1
                 vastus.opacity = 1
                 ok.opacity = 1
-                edasi.opacity = 1
+                edasi_hall.opacity = 1
 				stopper.opacity = 1
 				taimer.running = true
 			    vastus.text=''
-				ok.opacity = 1
 				kysimusetekst.opacity = 1
 				teemanimi = kysimus.kysteemanot
 				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimus.valikys
 				vastus.opacity = 1
 				kast.opacity = 1
-				edasi.opacity = 0
 
 			}
 		}	
     }
     Image {
         id: abi
-        source: "images/group_2.png"
-        x: 292
-        y: 228
+        source: "images/abi.png"
+        x: 325
+        y: 230
         opacity: 1
         MouseArea {
             anchors.fill: parent
@@ -68,45 +66,25 @@ Item {
                 abi.opacity = 0
                 mangi.opacity = 0
                 eesti_v2ike.opacity = 1
-                content.opacity = 1
+                abicontent.opacity = 1
                 kysimusetekst.text = " See on meie väike programmeerimisüritus, kus püüame imiteerida\n lauamängu EESTI MÄNG\n EDASI nupuga tuleb järgmine küsimus\n OK nupuga kinnitad vastuse ja väljastab kas Õige/Vale\n paremale tulevad teemade kaardid, mis teeninud oled\n all vasakul näitab õigete ja valede vastuste arvu"
                 kysimusetekst.opacity = 1
+				tagasi.opacity = 1
             }
         }
     }
     Image {
         id: eesti_v2ike
-        source: "images/eesti_v2ike.png"
-        x: 8
-        y: 4
+        source: "images/eesti_mäng_väike.png"
+        x: 0
+        y: -39
         opacity: 0
-		MouseArea {
-			anchors.fill: parent
-			onClicked: {
-				content.opacity = 0
-				vastus.opacity = 0
-				ok.opacity = 0
-				edasi.opacity = 0
-				mangi.opacity = 1
-				abi.opacity = 1
-				logo.opacity = 1
-				eesti_v2ike.opacity = 0
-				kast.opacity = 0
-				geograafia.opacity = 0
-				varia.opacity = 0
-				loodus.opacity = 0
-				sport.opacity = 0
-				kultuur.opacity = 0
-				ajalugu.opacity = 0
-				kysimusetekst.text = ''
-			}
-		}
     }
     Image {
         id: content
-        source: "images/content.png"
-        x: 10
-        y: 41
+        source: "images/valgetaust.png"
+        x: 13
+        y: 65
         opacity: 0
         Text {
 			id: kysimusetekst
@@ -115,6 +93,31 @@ Item {
 			opacity: 0
 			anchors.fill: parent
 		}
+    }
+    Image {
+        id: abicontent
+        source: "images/valgetaust_abi.png"
+        x: 13
+        y: 65
+        opacity: 0
+	}
+    Image {
+        id: tagasi
+        source: "images/tagasi.png"
+        x: 474
+        y: 269
+        opacity: 0
+		MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                logo.opacity = 1
+                abi.opacity = 1
+                mangi.opacity = 1
+                eesti_v2ike.opacity = 0
+                abicontent.opacity = 0
+				tagasi.opacity = 0
+            }
+        }
     }
     TextInput{
         id: vastus
@@ -126,15 +129,30 @@ Item {
 
     }
     Image {
+        id: edasi_hall
+        source: "images/edasi_hall.png"
+        x: 170
+        y: 156
+        opacity: 0
+    }
+    Image {
+        id: ok_hall
+        source: "images/vasta_hall.png"
+        x: 49
+        y: 156
+        opacity: 0
+    }
+    Image {
         id: ok
-        source: "images/ok.png"
-        x: 60
-        y: 190
+        source: "images/vasta.png"
+        x: 49
+        y: 156
         opacity: 0
         MouseArea {
             anchors.fill: parent
             onClicked: {
                 edasi.opacity = 1
+				edasi_hall.opacity = 0
                 vastus.opacity = 1
                 oigevastus = kysimus.valivas
 				if(oigevastus.length > 4) {
@@ -150,6 +168,7 @@ Item {
 				}
 				if(vastus.text.toLowerCase().indexOf(oigevastus.toLowerCase())!=-1){
 					vastus.text = "Õige"
+					ok_hall.opacity = 1
 					ok.opacity = 0
                     oigedvastused = oigedvastused+1
 
@@ -175,6 +194,7 @@ Item {
 				else if(oigevastus.toLowerCase().indexOf(vastus.text.toLowerCase())!=-1 && oigevastus.length - vastus.text.length <= pikkus){
 					vastus.text = "Õige"
 					ok.opacity = 0
+					ok_hall.opacity = 1
                     oigedvastused = oigedvastused+1
 
 					if(teemanimi==="GEOGRAAFIA") {
@@ -199,6 +219,7 @@ Item {
 				else { vastus.text = "VALE, õige vastus on "+oigevastus
 				       valedvastused = valedvastused+1
 					   ok.opacity = 0
+					   ok_hall.opacity = 1
 				       }
 				
             }
@@ -208,71 +229,67 @@ Item {
     Image {
         id: edasi
         source: "images/edasi.png"
-        x: 150
-        y: 190
+        x: 170
+        y: 156
         opacity: 0
 		MouseArea {
 			anchors.fill: parent
 			onClicked: {
 			    vastus.text=''
 				ok.opacity = 1
+				ok_hall.opacity = 0
 				kysimusetekst.opacity = 1
 				teemanimi = kysimus.kysteemanot
 				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimus.valikys
 				vastus.opacity = 1
 				kast.opacity = 1
 				edasi.opacity = 0
+				edasi_hall.opacity = 1
 			}
 		}
 
     }
-    Image {
-        id: kultuur
-        source: "images/kultuur.png"
-        x: 380
-        y: 85
+     Image {
+        id: ajalugu
+        source: "images/ajalugu.png"
+        x: 397
+        y: 154
         opacity: 0
-
-    }
-    Image {
-        id: sport
-        source: "images/sport.png"
-        x: 380
-        y: 120
-        opacity: 0
-
     }
     Image {
         id: geograafia
-        source: "images/geograafia.png"
-        x: 380
-        y: 155
+        source: "images/ge_ograafia.png"
+        x: 413
+        y: 70
         opacity: 0
-
     }
     Image {
-        id: varia
-        source: "images/varia.png"
-        x: 380
-        y: 190
+        id: kultuur
+        source: "images/kultuur.png"
+        x: 408
+        y: 107
         opacity: 0
-
     }
     Image {
         id: loodus
         source: "images/loodus.png"
-        x: 380
-        y: 225
+        x: 412
+        y: 180
         opacity: 0
-
     }
     Image {
-        id: ajalugu
-        source: "images/ajalugu.png"
-        x: 380
-        y: 260
+        id: sport
+        source: "images/sport.png"
+        x: 413
+        y: 232
         opacity: 0
-
+    }
+    Image {
+        id: varia
+        source: "images/varia.png"
+        x: 413
+        y: 267
+        opacity: 0
     }
     Image {
         id: kast
@@ -291,8 +308,8 @@ Item {
     }
     Rectangle {
         id: stopper
-        x: 400
-        y: 15
+        x: 120
+        y: 250
         width : 40
         height: 25
 		opacity: 0
