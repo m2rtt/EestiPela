@@ -41,6 +41,16 @@ Item {
                 vastus.opacity = 1
                 ok.opacity = 1
                 edasi.opacity = 1
+				stopper.opacity = 1
+				taimer.running = true
+			    vastus.text=''
+				ok.opacity = 1
+				kysimusetekst.opacity = 1
+				teemanimi = kysimus.kysteemanot
+				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimus.valikys
+				vastus.opacity = 1
+				kast.opacity = 1
+				edasi.opacity = 0
 
 			}
 		}	
@@ -285,6 +295,7 @@ Item {
         y: 15
         width : 40
         height: 25
+		opacity: 0
 
         Text {
 
@@ -297,8 +308,9 @@ Item {
     }
 
     Timer {
+		id: taimer
         interval: 1000
-        running: true
+        running: false
         repeat: true
         onTriggered: seconds++
     }
