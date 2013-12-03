@@ -86,13 +86,6 @@ Item {
         x: 13
         y: 65
         opacity: 0
-        Text {
-			id: kysimusetekst
-			font.pixelSize: 13
-			text: ''
-			opacity: 0
-			anchors.fill: parent
-		}
     }
     Image {
         id: abicontent
@@ -100,6 +93,13 @@ Item {
         x: 13
         y: 65
         opacity: 0
+        Text {
+			id: kysimusetekst
+			font.pixelSize: 13
+			text: ''
+			opacity: 0
+			anchors.fill: parent
+		}
 	}
     Image {
         id: tagasi
