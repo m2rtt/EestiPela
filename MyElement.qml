@@ -67,8 +67,8 @@ Item {
                 mangi.opacity = 0
                 eesti_v2ike.opacity = 1
                 abicontent.opacity = 1
-                kysimusetekst.text = " See on meie väike programmeerimisüritus, kus püüame imiteerida\n lauamängu EESTI MÄNG\n EDASI nupuga tuleb järgmine küsimus\n OK nupuga kinnitad vastuse ja väljastab kas Õige/Vale\n paremale tulevad teemade kaardid, mis teeninud oled\n all vasakul näitab õigete ja valede vastuste arvu"
-                kysimusetekst.opacity = 1
+                abitekst.text = " See on meie väike programmeerimisüritus, kus püüame imiteerida\n lauamängu EESTI MÄNG\n EDASI nupuga tuleb järgmine küsimus\n OK nupuga kinnitad vastuse ja väljastab kas Õige/Vale\n paremale tulevad teemade kaardid, mis teeninud oled\n all vasakul näitab õigete ja valede vastuste arvu"
+                abitekst.opacity = 1
 				tagasi.opacity = 1
             }
         }
@@ -86,6 +86,13 @@ Item {
         x: 13
         y: 65
         opacity: 0
+        Text {
+			id: kysimusetekst
+			font.pixelSize: 13
+			text: ''
+			opacity: 0
+			anchors.fill: parent
+		}
     }
     Image {
         id: abicontent
@@ -94,7 +101,7 @@ Item {
         y: 65
         opacity: 0
         Text {
-			id: kysimusetekst
+			id: abitekst
 			font.pixelSize: 13
 			text: ''
 			opacity: 0
