@@ -66,7 +66,7 @@ class Programm(QWidget):
         global view               
         view = QDeclarativeView()
         # Create an URL to the QML file
-        url = QUrl('MyElement.qml')
+        url = QUrl('EestiM2ng.qml')
         # Set the QML file and show
         view.setSource(url)
         view.rootContext().setContextProperty('proge', self)

@@ -13,6 +13,18 @@ Item {
 	property variant pikkus: 0
 	property int seconds : 0
 	property int n: 0
+	property int a: 0
+	property int aa: 0
+	property int b: 0
+	property int bb: 0
+	property int c: 0
+	property int cc: 0
+	property int d: 0
+	property int dd: 0
+	property int e: 0
+	property int ee: 0
+	property int f: 0
+	property int ff: 0
     Image {
         id: taust
         source: "images/taust.png"
@@ -53,12 +65,12 @@ Item {
 				kast.opacity = 1
 				kysimusmuutujasse=kysimus.valikys
 				kyspikkus = kysimusmuutujasse.length
-				if(kyspikkus <= 63){
-				kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse
+				if(kyspikkus <= 53){
+				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimusmuutujasse
 				}
 				else{
-				     n = kysimusmuutujasse.substring(47,63).indexOf(" ")
-                     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse.substring(0,47+n)+"\n"+" "+kysimusmuutujasse.substring(47+n,kyspikkus)
+				     n = kysimusmuutujasse.substring(37,53).indexOf(" ")
+                     kysimusetekst.text = " "+teemanimi+"\n "+kysimusmuutujasse.substring(0,37+n)+"\n"+kysimusmuutujasse.substring(37+n,kyspikkus)
 				}
 
 			}
@@ -78,7 +90,7 @@ Item {
                 mangi.opacity = 0
                 eesti_v2ike.opacity = 1
                 abicontent.opacity = 1
-                abitekst.text = " See on meie väike programmeerimisüritus, kus püüame imiteerida\n lauamängu EESTI MÄNG\n EDASI nupuga tuleb järgmine küsimus\n OK nupuga kinnitad vastuse ja väljastab kas Õige/Vale\n paremale tulevad teemade kaardid, mis teeninud oled\n all vasakul näitab õigete ja valede vastuste arvu"
+                abitekst.text = "  See on meie väike programmeerimisüritus, kus püüame imiteerida\n  lauamängu EESTI MÄNG\n  1) EDASI nupuga tuleb järgmine küsimus\n  2) VASTA nupuga kinnitad vastuse\n  3) Paremale tekivad teemad, mis oled õigesti vastanud\n  4) All vasakul näitab statisktikat\n  PS: Jälgi KÄÄNDEID!!"
                 abitekst.opacity = 1
 				tagasi.opacity = 1
             }
@@ -99,8 +111,10 @@ Item {
         opacity: 0
         Text {
 			id: kysimusetekst
+			anchors.margins: 5
 			font.pixelSize: 13
 			text: ''
+			font.family: "Century Gothic"
 			opacity: 0
 			anchors.fill: parent
 		}
@@ -113,9 +127,11 @@ Item {
         opacity: 0
         Text {
 			id: abitekst
-			font.pixelSize: 13
+			font.pixelSize: 15
+			font.family: "Century Gothic"
 			text: ''
 			opacity: 0
+			anchors.margins: 5
 			anchors.fill: parent
 		}
 	}
@@ -143,7 +159,8 @@ Item {
         y: 135
         opacity: 0
         font.pixelSize: 13
-        font.family: "Arial"
+        font.family: "Century Gothic"
+        color: "black"
         focus: true
 
     }
@@ -186,60 +203,89 @@ Item {
 					pikkus = 0
 				}
 				if(vastus.text.toLowerCase().indexOf(oigevastus.toLowerCase())!=-1){
+				    vastus.font.bold = true
+				    vastus.color = "green"
 					vastus.text = "Õige"
 					ok_hall.opacity = 1
 					ok.opacity = 0
                     oigedvastused = oigedvastused+1
 
-					if(teemanimi==="GEOGRAAFIA") {
+					if(teemanimi=="GEOGRAAFIA") {
 					geograafia.opacity = 1
+					a=1
 					}
-					else if (teemanimi==="KULTUUR") {
+					else if (teemanimi=="KULTUUR") {
 					kultuur.opacity = 1
+					b=1
 					}
-					else if (teemanimi==="AJALUGU") {
+					else if (teemanimi=="AJALUGU") {
 					ajalugu.opacity = 1
+					c=1
 					}
-					else if (teemanimi==="SPORT") {
+					else if (teemanimi=="SPORT") {
 					sport.opacity = 1
+					d=1
 					}
-					else if (teemanimi==="VARIA") {
+					else if (teemanimi=="VARIA") {
 					varia.opacity = 1
+					e=1
 					}
-					else if (teemanimi==="LOODUS") {
+					else if (teemanimi=="LOODUS") {
 					loodus.opacity = 1
+					f=1
 					}
 				}
 				else if(oigevastus.toLowerCase().indexOf(vastus.text.toLowerCase())!=-1 && oigevastus.length - vastus.text.length <= pikkus){
+				    vastus.font.bold = true
+				    vastus.color = "green"
 					vastus.text = "Õige"
 					ok.opacity = 0
 					ok_hall.opacity = 1
                     oigedvastused = oigedvastused+1
 
-					if(teemanimi==="GEOGRAAFIA") {
+					if(teemanimi=="GEOGRAAFIA") {
 					geograafia.opacity = 1
+					aa=1
 					}
-					else if (teemanimi==="KULTUUR") {
+					else if (teemanimi=="KULTUUR") {
 					kultuur.opacity = 1
+					bb=1
 					}
-					else if (teemanimi==="AJALUGU") {
+					else if (teemanimi=="AJALUGU") {
 					ajalugu.opacity = 1
+					cc=1
 					}
-					else if (teemanimi==="SPORT") {
+					else if (teemanimi=="SPORT") {
 					sport.opacity = 1
+					dd=1
 					}
-					else if (teemanimi==="VARIA") {
+					else if (teemanimi=="VARIA") {
 					varia.opacity = 1
+					ee=1
 					}
-					else if (teemanimi==="LOODUS") {
+					else if (teemanimi=="LOODUS") {
 					loodus.opacity = 1
+					ff=1
 					}
 				}
-				else { vastus.text = "VALE, õige vastus on "+oigevastus
+				else { vastus.font.bold = true
+				       vastus.color = "red"
+				       vastus.text = "VALE, õige vastus on "+oigevastus
 				       valedvastused = valedvastused+1
 					   ok.opacity = 0
 					   ok_hall.opacity = 1
-				       }
+			    }
+			    if((a == 1 || aa==1) && (b==1 || bb==1) && (c==1 || cc==1) && (d==1 || dd==1) && (e==1 || ee==1) && (f==1 || ff==1)){
+			       vastus.opacity = 0
+			       vastus.text = ""
+			       ok_hall.opacity = 0
+			       ok.opacity = 0
+			       edasi.opacity = 0
+			       kysimusetekst.font.bold = true
+			       kysimusetekst.font.pixelSize = 18
+			       kysimusetekst.color = "blue"
+			       kysimusetekst.text = "\n      VÕITSID MÄNGU!"
+			    }
 				
             }
         }
@@ -255,6 +301,8 @@ Item {
 			anchors.fill: parent
 			onClicked: {
 			    vastus.text=''
+			    vastus.font.bold = false
+			    vastus.color = "black"
 				ok.opacity = 1
 				ok_hall.opacity = 0
 				kysimusetekst.opacity = 1
@@ -265,12 +313,12 @@ Item {
 				edasi_hall.opacity = 1
 				kysimusmuutujasse=kysimus.valikys
 				kyspikkus = kysimusmuutujasse.length
-				if(kyspikkus <= 63){
-				kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse
+				if(kyspikkus <= 53){
+				kysimusetekst.text = " "+teemanimi+"\n"+"\n"+" "+kysimusmuutujasse
 				}
 				else{
-				     n = kysimusmuutujasse.substring(47,63).indexOf(" ")
-                     kysimusetekst.text = "  "+teemanimi+"\n"+"\n"+"  "+kysimusmuutujasse.substring(0,47+n)+"\n"+" "+kysimusmuutujasse.substring(47+n,kyspikkus)
+				     n = kysimusmuutujasse.substring(37,53).indexOf(" ")
+                     kysimusetekst.text = " "+teemanimi+"\n"+" "+kysimusmuutujasse.substring(0,37+n)+"\n"+kysimusmuutujasse.substring(37+n,kyspikkus)
 				}
 			}
 		}
@@ -327,7 +375,7 @@ Item {
         Text {
 			id: kastikiri
 			font.pixelSize: 15
-			font.family: "Arial"
+			font.family: "Century Gothic"
 			text: "ÕIGEID: "+oigedvastused.toString()+"\n"+"VALESID: "+valedvastused.toString()
 			opacity: 1
 			anchors.fill: parent

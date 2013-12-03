@@ -132,7 +132,7 @@ class PeaAken(QDeclarativeView):
 
     def __init__(self, parent=None):
         super(PeaAken, self).__init__(parent)
-        url = QUrl('MyElement.qml')
+        url = QUrl('EestiM2ng.qml')
         self.kysimus = Kysimus()
         self.m2ngija = M2ngija()
 
