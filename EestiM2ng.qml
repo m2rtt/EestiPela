@@ -13,18 +13,6 @@ Item {
 	property variant pikkus: 0
 	property int seconds : 0
 	property int n: 0
-	property int a: 0
-	property int aa: 0
-	property int b: 0
-	property int bb: 0
-	property int c: 0
-	property int cc: 0
-	property int d: 0
-	property int dd: 0
-	property int e: 0
-	property int ee: 0
-	property int f: 0
-	property int ff: 0
     Image {
         id: taust
         source: "images/taust.png"
@@ -150,9 +138,24 @@ Item {
                 eesti_v2ike.opacity = 0
                 abicontent.opacity = 0
 				tagasi.opacity = 0
+				geograafia.opacity = 0
+				varia.opacity = 0
+				sport.opacity = 0
+				loodus.opacity = 0
+				kultuur.opacity = 0
+				ajalugu.opacity = 0
+				content.opacity = 0
+				stopper.opacity = 0
+				kast.opacity = 0
+				oigedvastused = 0
+				valedvastused = 0
+				kysimusetekst.font.bold = false
+				kysimusetekst.color = "black"
+				kysimusetekst.font.pixelSize = 13
             }
         }
     }
+
     TextInput{
         id: vastus
         x: 24
@@ -212,27 +215,21 @@ Item {
 
 					if(teemanimi=="GEOGRAAFIA") {
 					geograafia.opacity = 1
-					a=1
 					}
 					else if (teemanimi=="KULTUUR") {
 					kultuur.opacity = 1
-					b=1
 					}
 					else if (teemanimi=="AJALUGU") {
 					ajalugu.opacity = 1
-					c=1
 					}
 					else if (teemanimi=="SPORT") {
 					sport.opacity = 1
-					d=1
 					}
 					else if (teemanimi=="VARIA") {
 					varia.opacity = 1
-					e=1
 					}
 					else if (teemanimi=="LOODUS") {
 					loodus.opacity = 1
-					f=1
 					}
 				}
 				else if(oigevastus.toLowerCase().indexOf(vastus.text.toLowerCase())!=-1 && oigevastus.length - vastus.text.length <= pikkus){
@@ -245,27 +242,21 @@ Item {
 
 					if(teemanimi=="GEOGRAAFIA") {
 					geograafia.opacity = 1
-					aa=1
 					}
 					else if (teemanimi=="KULTUUR") {
 					kultuur.opacity = 1
-					bb=1
 					}
 					else if (teemanimi=="AJALUGU") {
 					ajalugu.opacity = 1
-					cc=1
 					}
 					else if (teemanimi=="SPORT") {
 					sport.opacity = 1
-					dd=1
 					}
 					else if (teemanimi=="VARIA") {
 					varia.opacity = 1
-					ee=1
 					}
 					else if (teemanimi=="LOODUS") {
 					loodus.opacity = 1
-					ff=1
 					}
 				}
 				else { vastus.font.bold = true
@@ -275,7 +266,7 @@ Item {
 					   ok.opacity = 0
 					   ok_hall.opacity = 1
 			    }
-			    if((a == 1 || aa==1) && (b==1 || bb==1) && (c==1 || cc==1) && (d==1 || dd==1) && (e==1 || ee==1) && (f==1 || ff==1)){
+			    if(loodus.opacity == 1 && varia.opacity == 1 && sport.opacity == 1 && ajalugu.opacity == 1 && kultuur.opacity == 1 && geograafia.opacity == 1){
 			       vastus.opacity = 0
 			       vastus.text = ""
 			       ok_hall.opacity = 0
@@ -285,6 +276,10 @@ Item {
 			       kysimusetekst.font.pixelSize = 18
 			       kysimusetekst.color = "blue"
 			       kysimusetekst.text = "\n      VÕITSID MÄNGU!"
+			       tagasi.x = 250
+			       tagasi.y = 170
+			       tagasi.opacity = 1
+
 			    }
 				
             }
