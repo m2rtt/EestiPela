@@ -313,12 +313,11 @@ Item {
 		}
 
     }
-    Rectangle {
+    Image {
         id: stopper
+		source: "images/stopper.png"
         x: 120
         y: 250
-        width : 40
-        height: 25
 		opacity: 0
 
         Text {
