@@ -152,6 +152,9 @@ Item {
 				kysimusetekst.font.bold = false
 				kysimusetekst.color = "black"
 				kysimusetekst.font.pixelSize = 13
+				tagasi.x = 474
+				tagasi.y = 269
+
             }
         }
     }
@@ -276,9 +279,10 @@ Item {
 			       kysimusetekst.font.pixelSize = 18
 			       kysimusetekst.color = "blue"
 			       kysimusetekst.text = "\n      VÕITSID MÄNGU!"
-			       tagasi.x = 250
-			       tagasi.y = 170
+			       tagasi.x = 275
+			       tagasi.y = 260
 			       tagasi.opacity = 1
+			       taimer.running = false
 
 			    }
 				
@@ -364,14 +368,14 @@ Item {
     Image {
         id: kast
         source: "images/kast.png"
-        x: 20
-        y: 250
+        x: 29
+        y: 255
         opacity: 0
         Text {
 			id: kastikiri
-			font.pixelSize: 15
-			font.family: "Century Gothic"
-			text: "ÕIGEID: "+oigedvastused.toString()+"\n"+"VALESID: "+valedvastused.toString()
+			font.pointSize: 15
+			font.family: "Berlin Sans FB"
+			text: "Õigeid: "+oigedvastused.toString()+"\n"+"Valesid: "+valedvastused.toString()
 			opacity: 1
 			anchors.fill: parent
 		}
@@ -380,16 +384,15 @@ Item {
     Image {
         id: stopper
 		source: "images/stopper.png"
-        x: 120
-        y: 250
+        x: 153
+        y: 252
 		opacity: 0
 
         Text {
 
-                text: seconds
-                font.pointSize: 11
-                font.bold: true
-                font.family: "Arial"
+                text: "Aeg: "+seconds+"s"
+                font.pointSize: 15
+                font.family: "Berlin Sans FB"
                 anchors.centerIn: parent
             }
     }
