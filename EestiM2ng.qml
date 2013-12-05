@@ -154,6 +154,7 @@ Item {
 				kysimusetekst.font.pixelSize = 13
 				tagasi.x = 474
 				tagasi.y = 269
+				seconds = 0
 
             }
         }
