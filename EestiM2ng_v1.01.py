@@ -50,7 +50,6 @@ class Kysimus(QDeclarativeItem, QObject):
     def valiKysimus(self):
         teemanr = randint(0,len(kysmaatriks)-1)
         kysnr = randint(0,len(kysmaatriks[teemanr])-1)
-        print(len(kysmaatriks[teemanr]))
         return teemanr, kysnr
         #return kysmaatriks[teemanr][kysnr],vasmaatriks[teemanr][kysnr]   
    
@@ -76,7 +75,6 @@ class Kysimus(QDeclarativeItem, QObject):
             return self.kysToGUI()
         else:
             olnudkyslist.append(list[0])
-            print(list,randteema,self.kysteema())
             return list[0]
     
     def vasToGUI(self):
@@ -145,7 +143,7 @@ class PeaAken(QDeclarativeView):
         self.center()
         self.setFixedSize(600,340)
         tiitel = "Eesti mäng"
-        self.setWindowTitle(tiitel) #millegipärast täpitäht ei tööta        
+        self.setWindowTitle(tiitel)       
         
     def center(self):
         

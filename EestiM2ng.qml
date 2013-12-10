@@ -277,9 +277,9 @@ Item {
 			       ok.opacity = 0
 			       edasi.opacity = 0
 			       kysimusetekst.font.bold = true
-			       kysimusetekst.font.pixelSize = 18
+			       kysimusetekst.font.pixelSize = 20
 			       kysimusetekst.color = "blue"
-			       kysimusetekst.text = "\n      VÕITSID MÄNGU!"
+			       kysimusetekst.text = "\n\n        VÕITSID MÄNGU!"
 			       tagasi.x = 275
 			       tagasi.y = 260
 			       tagasi.opacity = 1
