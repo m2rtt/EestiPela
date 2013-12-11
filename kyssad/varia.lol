@@ -7,7 +7,7 @@
 6|Keda on kujutatud Eesti 500-kroonise rahatähe tagaküljel?>Suitsupääsukest
 7|Millises majas asub Vabariigi Valitsus?>Stenbocki majas
 8|Millise linna tunnuslause on: Väge täis!>Rakvere
-9|Kui kõrge on Tallinna teletorn?>314m
+9|Kui kõrge on Tallinna teletorn?>314 m
 10|Mis lilled on kukekaatsad?>Nurmenukud
 11|Millise üliõpilaskorporatsiooni lipukiri on "Eestimaa, mu isamaa"?>Rotalia
 12|Millist muusikut kutsuti Raudmeheks?>Gunnar Grapsi
@@ -15,7 +15,7 @@
 14|Millise linna sõpruslinnadd on Kotka, Kiel ja Venezia?>Tallinna
 15|Keda on kujutatud Eesti 50-kroonise rahatähe esiküljel?>Rudolf Tobiast
 16|Millises linnas on rahvastiku tihedus Eesti suurim?>Tartus
-17|Mitmeks aastaks valitakse ametikkse Eesti Vabariigi president?>Viieks(5)
+17|Mitmeks aastaks valitakse ametikkse Eesti Vabariigi president? (kirjuta number sõna(de)ga)>Viieks
 18|Mis laata peetakse Türi linnas kevadeti?>Lillelaata
 19|Milline Eesti kommunistliku liikumise tegelane hukati Tallinnas 03.05.1922?>Viktor Kingisepp
 20|Milline Eesti Vabariigi poliitik on istunud Peterburi Krestõ vanglas?>Konstantin Päts

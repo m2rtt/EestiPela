@@ -21,7 +21,7 @@
 20|Milline poolsaar ulatub kõige kaugemale lõunasse?>Sõrve säär
 21|Milline Eesti vald on pindalalt suurim?>Märjamaa
 22|Milline on Eesti sügavaim järv?>Rõuge Suurjärv
-23|Mitmendal kohal on Eesti Euroopa Liidus metsarohkuse poolest?>Kolmandal(3.)
+23|Mitmendal kohal on Eesti Euroopa Liidus metsarohkuse poolest? (kirjuta number sõna(de)ga)>Kolmandal
 24|Millisel poolsaarel asub Paldiski linn?>Pakri poolsaarel
 25|Kus asuvad Tondisaar, Pähksaar, Ainsaar ja Rättsaar?>Võrtsjärves
 26|Milline maakond laiub Võrtsjärvest Peipsi järveni?>Tartu maakond
@@ -30,7 +30,7 @@
 29|Mitu linna on Eestis?>47
 30|Milline neist linnadest on lõunapoolseim: Pärnu, Viljandi või Tartu?>Viljandi
 31|Millist paika tuntakse kui Setumaa keskust?>Värskat
-32|Mitmendal kohal Euroopa järvede hulgas on suuruselt Peipsi järv?>Neljandal(4.)
+32|Mitmendal kohal Euroopa järvede hulgas on suuruselt Peipsi järv? (kirjuta number sõna(de)ga)>Neljandal
 33|Milline vald on elanike arvutl Eesti suurim?>Rapla vald
 34|Millist kohanime Eestis pole: Rannarootsi, Pivarootsi või Noarootsi?>Rannarootsi
 35|Milline neist jõgedest on lühim: Jägala, Jõelähtme või Kunda?>Jõelähtme
@@ -42,7 +42,7 @@
 41|Millises linnas asub linnaosa Tuulte Roos?>Kuressaares
 42|Milline Põhja-Eesti 18,6km^2 pindalaga saar asub umbes 9 km kaugusel mandrist?>Naissaar
 43|Millise sadama kaudu mandril peetakse laevaühendust Hiiumaa ja Vormsiga?>Rohuküla
-44|Mitu üle 50 000 elanikuga linna on Eestis?>5(viis)
+44|Mitu üle 50 000 elanikuga linna on Eestis? (kirjuta number sõna(de)ga)>viis
 45|Kus asub Kuivastu sadam?>Muhumaal
 46|Milline on Eesti lõunapoolseim linn?>Valga
 47|Kuhu suubub Kasari jõgi?>Matsalu lahte

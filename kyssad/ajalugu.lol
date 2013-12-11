@@ -4,7 +4,7 @@
 3|Kas Lydia Koidula on maetud Eestisse?>Jah
 4|Kes oli aastail 1939-1940 Eesti Vabariigi viimane peaminister?>Jüri Uluots
 5|Kes oli tsaariarmee alampolkovnik ja hilisem Eesti kindral?>Johan Laidoner
-6|Mitu kloostrit oli Eestimaal Jüriöö ülestõusu eel?>2(kaks)
+6|Mitu kloostrit oli Eestimaal Jüriöö ülestõusu eel? (kirjuta number sõna(de)ga)>kaks
 7|Kes oli Eesti vabariigi esimene president?>Konstantin Päts
 8|Kes on seni olnud Euroopa noorim peaminister?>Mart Laar
 9|Milline riik tunnustas esimesena taasiseseisvunud Eesti Vabariiki 22.08.1991?>Island
@@ -33,12 +33,12 @@
 32|Kellele müüs Taani 1346.a Põhja-Eesti(Eestimaa Hertsogkonna)?>Saksa Ordule
 33|Mitu tikuvabrikut on olnud Eestis: 1, 3 või 4?>4
 34|Milline poliitik oli Eesti Vabariigi peaminister aastail 1919-20, riigivanem aastail 1927-28 ja 1933?>Jaan Tõnisson
-35|Mitu Eesti naist on pälvinud Vabadussõja risti?>1(üks)
+35|Mitu Eesti naist on pälvinud Vabadussõja risti? (kirjuta number sõna(de)ga)>üks
 36|Millist paika Eestis on nimetatud Dagöks?>Hiiumaad
 37|Kas Liivi sõda algas 1448., 1558. või 1668.a?>1558
 38|Milline on Eesti vanim apteek?>Raeapteek Tallinnas
 39|Kuidas nimetatakse 1932.a Kaitseliidu juurde asutatud tütarlaste skautistlikku organisatsiooni?>Kodutütred
-40|Mitu maakonda oli Eestis muinasaja lõpul?>8(kaheksa) 
+40|Mitu maakonda oli Eestis muinasaja lõpul? (kirjuta number sõna(de)ga)>kaheksa
 41|Mis nimesid on kandnud Tartu linn(nimeta üks)?>Jurjev, Dorpat
 42|Kus toimus Jäälahing?>Peipsi järvel
 43|Millal valmis Estonia teatrihoone?>1913

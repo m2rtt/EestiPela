@@ -39,7 +39,7 @@
 38|Kes on teineteisele kirjanikud Tiia Toomet ja Jaan Kaplinski?>Abikaasad
 39|Millist poetessi kutsuti ka Muttiks ja Printsessiks?>Marie Underit
 40|Kes on ajaloolise jutustuse "Meelis" autor?>Enn Kippel
-41|Mitu erinevat perekonnanime anti eestlastele nimereformiga: umbes 10 000, 20 000 või 40 000?>40000
+41|Mitu erinevat perekonnanime anti eestlastele nimereformiga: umbes 10000, 20000 või 40000?>40000
 42|Mis nime kandis Eestis esimene üliõpilaste ühendus?>Eesti Üliõpilaste Selts
 43|Mis pealkirja kandis O.Neulandi 1979.a valminud debüütmängufilm?>Tuulte pesa
 44|Kes oli Erna Villmer?>Näitleja

@@ -28,7 +28,7 @@
 27|Mis aastal võitsid vennad Tõnisted purjetamises olümpiahõbeda?>1988
 28|Kui raske on meeste kettaheite ketas, kas 1,5 kg, 2 kg või 2,5 kg?>2 kg
 29|Milline tuntud käsipallur on oma karjääri kestel mänginud ka Rootsis ja Jaapanis?>Riho-Bruno Bramanis
-30|Mitu korda on Erika Salumäe valitud aasta parimaks naissportlaseks?>9 või üheksa
+30|Mitu korda on Erika Salumäe valitud aasta parimaks naissportlaseks? (kirjuta number sõna(de)ga)>üheksa
 31|Millise spordialaga tegeleb Marko Albert?>Triatloniga
 32|Milline klubi esindab Narvat Eesti jalgpallimeistrivõistluste meistriliigas?>Narva Trans
 33|Kas keegel ja bowling on sama spordiala?>Ei
@@ -36,7 +36,7 @@
 35|Mida tähendab lühend EOK?>Eesti Olümpiakomitee
 36|Kes tuli 1936.a kahekordseks olümpiavõitjaks maadluses?>Kristjan Palusalus
 37|Kes valiti 2013.a parimaks jalgpalluriks?>Konstantin Vassiljev
-38|Mitmenda koha sai kettaheitja Gerd Kanter 2012.a olümpiamängudelt Londonis 2012.a?>Kolmanda(3.)
+38|Mitmenda koha sai kettaheitja Gerd Kanter olümpiamängudelt Londonis 2012.a? (kirjuta number sõna(de)ga)>Kolmanda
 39|Mis jalgpalliklubi esindab Konstantin Vassiljev?>Permi Amkari
 40|Kes on Eesti korvpallikoondise peatreener?>Tiit Sokk
 41|Kelle nimel on meeste 200m jooksu Eesti rekord?>Marek Niit
