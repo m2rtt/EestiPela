@@ -10,7 +10,7 @@
 9|Kes on laulnud legendaarseks laulu "Legendaarne"?>Toe Tag
 10|Kes on Eesti tuntuim sümfonist (10 sümfooniat, 2 ooperit)?>Eduard Tubin
 11|Kes oli lastekrijanik Aino Perviku abikaasa?>Eno Raud
-12|Millise kõrgkooli ajaleht kannab nime Mente et Manu?>Tallinna Tehnikaülikooli
+12|Millise kõrgkooli ajaleht kannab nime Mente et Manu?>Tallinna Tehnikaülikooli(TTÜ)
 13|Kes on raamatu "Kevade" autor?>Oskar Luts
 14|Kuidas nimetati J.V.Jannseni 1864.a asutatud ajalehte?>Eesti Postimees
 15|Kes on loonud Kadrioru rannas oleva mälestusmärgi "Russalka"?>Amandus Adamson

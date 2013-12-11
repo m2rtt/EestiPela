@@ -198,7 +198,7 @@ Item {
 				edasi_hall.opacity = 0
                 vastus.opacity = 1
                 oigevastus = kysimus.valivas
-				if(oigevastus.length > 4) {
+				if(oigevastus.length >= 4) {
 					if(oigevastus.length > 8) {
 						pikkus = 8
 					}

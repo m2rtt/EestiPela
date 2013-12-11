@@ -1,5 +1,5 @@
 0|Milline loom on kujutatud Põlvamaa vapil?>Kobras
-1|Millist seent kutsutakse ämmatossuks?>Harilikku murumuna
+1|Millist seent kutsutakse ämmatossuks?>Murumuna
 2|Kuidas kutsutakse kastreeritud veist?>Härg
 3|Millist taime kutsutakse rahvasuus palukaks?>Pohla
 4|Millist taime kutsutakse ka joovikaks?>Sinikat
@@ -47,5 +47,5 @@
 46|Eestis elutseb kaks rahvusvahelisse "Punasesse raamatusse" kantud linnuliiki: rukkirääk ja ...?>Merikotkas
 47|Kas vähkidel on liitsilm või lihtsilm?>Liitsilm
 48|Kuidas nimetatakse teisiti kõrgsood?>Raba
-49|Millise meilgi levinud taime vilju lisatakse dþinnile?>Kadaka
+49|Millise meilgi levinud taime vilju lisatakse dþinnile?>Kadakas
 50|Milline on mügri teine levinud nimi?>Vesirott

@@ -15,7 +15,7 @@
 14|Millise linna sõpruslinnadd on Kotka, Kiel ja Venezia?>Tallinna
 15|Keda on kujutatud Eesti 50-kroonise rahatähe esiküljel?>Rudolf Tobiast
 16|Millises linnas on rahvastiku tihedus Eesti suurim?>Tartus
-17|Mitmeks aastaks valitakse ametikkse Eesti Vabariigi president?>Viieks
+17|Mitmeks aastaks valitakse ametikkse Eesti Vabariigi president?>Viieks(5)
 18|Mis laata peetakse Türi linnas kevadeti?>Lillelaata
 19|Milline Eesti kommunistliku liikumise tegelane hukati Tallinnas 03.05.1922?>Viktor Kingisepp
 20|Milline Eesti Vabariigi poliitik on istunud Peterburi Krestõ vanglas?>Konstantin Päts
@@ -25,7 +25,7 @@
 24|Milline linn oli 19.sajandil suurim tööstuslinn Eestis?>Narva
 25|Kus asub Eesti tuntuim klaasivabrik?>Järvakandis
 26|Mis oli Lennart Meri teine eesnimi?>Georg
-27|Milline on Eesti jämedaim puu?>Tamme-Lauri tamm
+27|Milline on Eesti jämedaim puu?>Tamme Lauri tamm
 28|Kes on tuntud Liivi sõja aene kroonikakirjutaja?>Balthasar Russow
 29|Milline kõrgkool asutati 1936.a?>Tallinna Tehnikaülikool
 30|Millise linna sümbol on tarvas?>Rakvere

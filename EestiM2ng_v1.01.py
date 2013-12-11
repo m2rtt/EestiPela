@@ -20,7 +20,7 @@ class M2ngija(QObject):
 
 class Kysimus(QDeclarativeItem, QObject):
 
-    vasV2ljakutse = Signal()
+    vasV2ljakutse = Signal() #antakse signaal funktsiooni väljakutseks, suhtlemine qml-iga
     kysV2ljakutse = Signal()
     genArv = Signal()
     kysteemaV2ljakutse=Signal()
@@ -39,7 +39,7 @@ class Kysimus(QDeclarativeItem, QObject):
         randteema, randkysimus = self.valiKysimus()
         maatriksipikkus = self.maatriksiPikkus()
 
-    def maatriksiPikkus(self):
+    def maatriksiPikkus(self): # maatriksipikkuse arvutamine
         maatriksipikkus = 0
         for i in kysmaatriks:
             for j in i:
@@ -47,13 +47,13 @@ class Kysimus(QDeclarativeItem, QObject):
         return maatriksipikkus
                         
         
-    def valiKysimus(self):
+    def valiKysimus(self): #genereerib random küsimuseteema ja küsimusenumbri
         teemanr = randint(0,len(kysmaatriks)-1)
         kysnr = randint(0,len(kysmaatriks[teemanr])-1)
         return teemanr, kysnr
         #return kysmaatriks[teemanr][kysnr],vasmaatriks[teemanr][kysnr]   
    
-    def kysimusvastus(self):    
+    def kysimusvastus(self):  #genereetud küsimus pannakse listi koos küsimuseteema numbriga
         kysvaslist = []
         kysvaslist.append(kysmaatriks[randteema][randkysimus])
         kysvaslist.append(vasmaatriks[randteema][randkysimus])
@@ -77,13 +77,13 @@ class Kysimus(QDeclarativeItem, QObject):
             olnudkyslist.append(list[0])
             return list[0]
     
-    def vasToGUI(self):
+    def vasToGUI(self): #otsitakse randomilt leitud teema ja küsimusenumbrile vastava teema ja küsimuse
         list = self.kysimusvastus()
         global randteema, randkysimus
         randteema,randkysimus = self.valiKysimus()
         return list[1]
     
-    def kysteema(self):
+    def kysteema(self): #küsimust genereerides leiab selle küsimuse teema
         if randteema==0:
             teema = "AJALUGU"
         elif randteema==1:
@@ -98,12 +98,12 @@ class Kysimus(QDeclarativeItem, QObject):
             teema = "VARIA"
         return teema
     
-    kysteemanot=Property(str,kysteema,notify=kysteemaV2ljakutse)
+    kysteemanot=Property(str,kysteema,notify=kysteemaV2ljakutse) #funktsioonide väljakutsed qml-faili tarvis
     valikys = Property(str,kysToGUI,notify=kysV2ljakutse)
     valivas = Property(str,vasToGUI,notify=vasV2ljakutse)   
     
 
-    def kysValdkond(self):
+    def kysValdkond(self): #loeb küsimuste tekstifailidest küsimused maatrikisse
         faililist = ["tyhi","kyssad\\ajalugu.lol","kyssad\\kultuur.lol","kyssad\\loodus.lol",
                      "kyssad\\geo.lol","kyssad\\sport.lol","kyssad\\varia.lol"]
         kysimusmaatriks = []
@@ -130,7 +130,7 @@ class PeaAken(QDeclarativeView):
 
     def __init__(self, parent=None):
         super(PeaAken, self).__init__(parent)
-        url = QUrl('EestiM2ng.qml')
+        url = QUrl('EestiM2ng.qml') #kasutab qml-faili
         self.kysimus = Kysimus()
         self.m2ngija = M2ngija()
 
@@ -141,9 +141,9 @@ class PeaAken(QDeclarativeView):
         self.setSource(url)
            
         self.center()
-        self.setFixedSize(600,340)
+        self.setFixedSize(600,340) #setib programmi akna
         tiitel = "Eesti mäng"
-        self.setWindowTitle(tiitel)       
+        self.setWindowTitle(tiitel)
         
     def center(self):
         
