@@ -98,8 +98,8 @@ class Kysimus(QDeclarativeItem, QObject):
     
 
     def kysValdkond(self): #loeb küsimuste tekstifailidest küsimused maatriksisse, kõige esimene funktsioon, mis valmis sai kirjutatud
-        faililist = ["tyhi","kyssad\\ajalugu.lol","kyssad\\kultuur.lol","kyssad\\loodus.lol",
-                     "kyssad\\geo.lol","kyssad\\sport.lol","kyssad\\varia.lol"]
+        faililist = ["tyhi","andmed\\kyssad\\ajalugu.lol","andmed\\kyssad\\kultuur.lol","andmed\\kyssad\\loodus.lol",
+                     "andmed\\kyssad\\geo.lol","andmed\\kyssad\\sport.lol","andmed\\kyssad\\varia.lol"]
         kysimusmaatriks = []
         vastusmaatriks = []        
         for fail in range(1,len(faililist)):
@@ -124,7 +124,7 @@ class PeaAken(QDeclarativeView):
 
     def __init__(self, parent=None):
         super(PeaAken, self).__init__(parent)
-        url = QUrl('EestiM2ng.qml') #kasutab qml-faili
+        url = QUrl('andmed\\huh.wat') #kasutab qml-faili, random nimi
         self.kysimus = Kysimus() # viide küsimuse klassile
         self.m2ngija = M2ngija()
 

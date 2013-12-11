@@ -33,7 +33,7 @@
 32|Mitut liiki seeni leidub Eestis: kas ligikaudu 3500, 4500 või 5500?>3500
 33|Millise linnuga seostatakse vanemaid, kes oma lastest ei hooli?>Rongaga
 34|Kas lindudel on arenenud haistmismeel?>Ei
-35|Milline on ilma kojata maismaa kopstigude üldine nimetus?>Nälkjad
+35|Milline on ilma kojata maismaa kopstigude üldine nimetus? (ainsuses)>Nälkjas
 36|Kes on Tallinna Loomaaia vapiloom?>Ilves
 37|Mis päev rahvakalendris seostub linakasvuga?>Vastlapäev
 38|Milline on meie suurim looduskaitseala?>Matsalu

@@ -21,7 +21,7 @@
 20|Mis on kõige kuulsam klubi, kus Mart Poom on mänginud?>Arsenal
 21|Kes on Ott Kiivikas?>Kulturist
 22|Kuidas kutsutakse males olukorda, milles mängija ei saa oma kuningat vastase malendi tulest vabastada ja kaotab seetõttu partii?>Matt
-23|Mitu vahetust võib teha ametlikus rahvusvahelises jalgpallimatğis?>3(kolm)
+23|Mitu vahetust võib teha ametlikus rahvusvahelises jalgpallimatğis? (kirjuta number sõna(de)ga)>kolm
 24|Milline organisatsioon ühendab spordist kirjutavaid ajakirjanikke?>Eesti Spordiajakirjanike Liit
 25|Kes valiti 1967.a NSV Liidu parimaks sportlaseks?>Jaan Talts
 26|Mitu sekundit on korvpallis ette nähtud ühe rünnaku sooritamiseks?>24
@@ -32,9 +32,9 @@
 31|Millise spordialaga tegeleb Marko Albert?>Triatloniga
 32|Milline klubi esindab Narvat Eesti jalgpallimeistrivõistluste meistriliigas?>Narva Trans
 33|Kas keegel ja bowling on sama spordiala?>Ei
-34|Mitme veaga langeb korvpallur mängust välja?>Viiega
+34|Mitme veaga langeb korvpallur mängust välja? (kirjuta number sõna(de)ga)>Viiega
 35|Mida tähendab lühend EOK?>Eesti Olümpiakomitee
-36|Kes tuli 1936.a kahekordseks olümpiavõitjaks maadluses?>Kristjan Palusalus
+36|Kes tuli 1936.a kahekordseks olümpiavõitjaks maadluses?>Kristjan Palusalu
 37|Kes valiti 2013.a parimaks jalgpalluriks?>Konstantin Vassiljev
 38|Mitmenda koha sai kettaheitja Gerd Kanter olümpiamängudelt Londonis 2012.a? (kirjuta number sõna(de)ga)>Kolmanda
 39|Mis jalgpalliklubi esindab Konstantin Vassiljev?>Permi Amkari

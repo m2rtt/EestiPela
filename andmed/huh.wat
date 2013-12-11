@@ -2,8 +2,10 @@
 import QtQuick 1.0
 
 Item {
+	//kujunduse mõõtmed
     width:600
     height:340
+	//mõned vajaminevad muutujad
     property variant teemanimi: ''
     property variant oigedvastused: 0
     property variant valedvastused: 0
@@ -15,27 +17,27 @@ Item {
 	property int n: 0
     Image {
         id: taust
-        source: "images/taust.png"
+        source: "andmed/pildid/taust.png"
         x: 0
         y: 0
         opacity: 1
     }
     Image {
         id: logo
-        source: "images/eesti_mäng.png"
+        source: "andmed/pildid/eesti_mäng.png"
         x: 0
         y: 72
         opacity: 1
     }
     Image {
         id: mangi
-        source: "images/mängi.png"
+        source: "andmed/pildid/mängi.png"
         x: 90
         y: 230
         opacity: 1
 		MouseArea {
 			anchors.fill: parent
-			onClicked: { 
+			onClicked: { //klikkimisel kaotab osad elemendid ära, toob teised nähtavale ja kuvab esimese küsimuse
 				logo.opacity = 0
 				abi.opacity = 0
 				mangi.opacity = 0
@@ -66,7 +68,7 @@ Item {
     }
     Image {
         id: abi
-        source: "images/abi.png"
+        source: "andmed/pildid/abi.png"
         x: 325
         y: 230
         opacity: 1
@@ -86,14 +88,14 @@ Item {
     }
     Image {
         id: eesti_v2ike
-        source: "images/eesti_mäng_väike.png"
+        source: "andmed/pildid/eesti_mäng_väike.png"
         x: 0
         y: -39
         opacity: 0
     }
     Image {
         id: content
-        source: "images/valgetaust.png"
+        source: "andmed/pildid/valgetaust.png"
         x: 13
         y: 65
         opacity: 0
@@ -109,7 +111,7 @@ Item {
     }
     Image {
         id: abicontent
-        source: "images/valgetaust_abi.png"
+        source: "andmed/pildid/valgetaust_abi.png"
         x: 13
         y: 65
         opacity: 0
@@ -125,7 +127,7 @@ Item {
 	}
     Image {
         id: tagasi
-        source: "images/tagasi.png"
+        source: "andmed/pildid/tagasi.png"
         x: 474
         y: 269
         opacity: 0
@@ -173,21 +175,21 @@ Item {
     }
     Image {
         id: edasi_hall
-        source: "images/edasi_hall.png"
+        source: "andmed/pildid/edasi_hall.png"
         x: 170
         y: 156
         opacity: 0
     }
     Image {
         id: ok_hall
-        source: "images/vasta_hall.png"
+        source: "andmed/pildid/vasta_hall.png"
         x: 49
         y: 156
         opacity: 0
     }
     Image {
         id: ok
-        source: "images/vasta.png"
+        source: "andmed/pildid/vasta.png"
         x: 49
         y: 156
         opacity: 0
@@ -198,7 +200,7 @@ Item {
 				edasi_hall.opacity = 0
                 vastus.opacity = 1
                 oigevastus = kysimus.valivas
-				if(oigevastus.length >= 4) {
+				if(oigevastus.length > 4) {
 					if(oigevastus.length > 8) {
 						pikkus = 8
 					}
@@ -293,7 +295,7 @@ Item {
 
     Image {
         id: edasi
-        source: "images/edasi.png"
+        source: "andmed/pildid/edasi.png"
         x: 170
         y: 156
         opacity: 0
@@ -326,49 +328,49 @@ Item {
     }
      Image {
         id: ajalugu
-        source: "images/ajalugu.png"
+        source: "andmed/pildid/ajalugu.png"
         x: 397
         y: 154
         opacity: 0
     }
     Image {
         id: geograafia
-        source: "images/ge_ograafia.png"
+        source: "andmed/pildid/ge_ograafia.png"
         x: 413
         y: 70
         opacity: 0
     }
     Image {
         id: kultuur
-        source: "images/kultuur.png"
+        source: "andmed/pildid/kultuur.png"
         x: 408
         y: 107
         opacity: 0
     }
     Image {
         id: loodus
-        source: "images/loodus.png"
+        source: "andmed/pildid/loodus.png"
         x: 412
         y: 180
         opacity: 0
     }
     Image {
         id: sport
-        source: "images/sport.png"
+        source: "andmed/pildid/sport.png"
         x: 413
         y: 232
         opacity: 0
     }
     Image {
         id: varia
-        source: "images/varia.png"
+        source: "andmed/pildid/varia.png"
         x: 413
         y: 267
         opacity: 0
     }
     Image {
         id: kast
-        source: "images/kast.png"
+        source: "andmed/pildid/kast.png"
         x: 29
         y: 255
         opacity: 0
@@ -384,7 +386,7 @@ Item {
     }
     Image {
         id: stopper
-		source: "images/stopper.png"
+		source: "andmed/pildid/stopper.png"
         x: 153
         y: 252
 		opacity: 0
