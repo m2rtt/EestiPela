@@ -80,7 +80,7 @@ Item {
                 mangi.opacity = 0
                 eesti_v2ike.opacity = 1
                 abicontent.opacity = 1
-                abitekst.text = "  See on meie väike programmeerimisüritus, kus püüame imiteerida\n  lauamängu EESTI MÄNG\n  1) EDASI nupuga tuleb järgmine küsimus\n  2) VASTA nupuga kinnitad vastuse\n  3) Paremale tekivad teemad, mis oled õigesti vastanud\n  4) All vasakul näitab statisktikat\n  PS: Jälgi KÄÄNDEID!!"
+                abitekst.text = "  See on meie väike programmeerimisüritus, kus püüame imiteerida\n  lauamängu EESTI MÄNG\n  1) EDASI nupuga tuleb järgmine küsimus\n  2) VASTA nupuga kinnitad vastuse\n  3) Paremale tekivad teemad, mis oled õigesti vastanud\n  4) All vasakul näitab statisktikat\n  PS: Jälgi KÄÄNDEID!!\n\n\n\n\nautorid: Marvin Maran ja Märt Sessman"
                 abitekst.opacity = 1
 				tagasi.opacity = 1
             }
