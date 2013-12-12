@@ -24,7 +24,7 @@
 23|Mitmendal kohal on Eesti Euroopa Liidus metsarohkuse poolest? (kirjuta number sõna(de)ga)>Kolmandal
 24|Millisel poolsaarel asub Paldiski linn?>Pakri poolsaarel
 25|Kus asuvad Tondisaar, Pähksaar, Ainsaar ja Rättsaar?>Võrtsjärves
-26|Milline maakond laiub Võrtsjärvest Peipsi järveni?>Tartu maakond
+26|Milline maakond laiub Võrtsjärvest Peipsi järveni?>Tartu
 27|Milline neist on põhjapoolseim jõgi: Piusa, Võhandu või Amme?>Amme
 28|Mis linnas on sündinud supermodell Carmen Kass?>Paides
 29|Mitu linna on Eestis?>47

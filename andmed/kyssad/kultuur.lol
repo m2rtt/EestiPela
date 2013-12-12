@@ -47,5 +47,5 @@
 46|Kes on mängufilmide "Mehed ei nuta" ja "Noor pensionär" reþissöör?>Sulev Nõmmik
 47|Milline teos algab sõnadega: "Laena mulle kannelt, Vanemuine..."?>Kalevipoeg
 48|Millist ETV lasteekraani tegelaskuju on kehastanud F.Veike ja P.Võigemast?>Buratinot
-49|Mis keeles kirjutas kirjanik Hans Leberecht?>Vene keeles
+49|Mis keeles kirjutas kirjanik Hans Leberecht?>Vene
 50|Kelle teos on romaan "Hingede öö"?>Karl Ristikivi

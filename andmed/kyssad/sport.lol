@@ -20,7 +20,7 @@
 19|Millisel alal võistlesid 1928.a esimesed eestlased taliolümpiamängudel?>Kiiruisutamises
 20|Mis on kõige kuulsam klubi, kus Mart Poom on mänginud?>Arsenal
 21|Kes on Ott Kiivikas?>Kulturist
-22|Kuidas kutsutakse males olukorda, milles mängija ei saa oma kuningat vastase malendi tulest vabastada ja kaotab seetõttu partii?>Matt
+22|Kuidas kutsutakse males olukorda, milles mängija ei saa oma kuningat vastase malendi tulest vabastada?>Matt
 23|Mitu vahetust võib teha ametlikus rahvusvahelises jalgpallimatðis? (kirjuta number sõna(de)ga)>kolm
 24|Milline organisatsioon ühendab spordist kirjutavaid ajakirjanikke?>Eesti Spordiajakirjanike Liit
 25|Kes valiti 1967.a NSV Liidu parimaks sportlaseks?>Jaan Talts
@@ -30,7 +30,7 @@
 29|Milline tuntud käsipallur on oma karjääri kestel mänginud ka Rootsis ja Jaapanis?>Riho-Bruno Bramanis
 30|Mitu korda on Erika Salumäe valitud aasta parimaks naissportlaseks? (kirjuta number sõna(de)ga)>üheksa
 31|Millise spordialaga tegeleb Marko Albert?>Triatloniga
-32|Milline klubi esindab Narvat Eesti jalgpallimeistrivõistluste meistriliigas?>Narva Trans
+32|Milline klubi esindab Narvat Eesti jalgpalli meistrivõistluste meistriliigas?>Narva Trans
 33|Kas keegel ja bowling on sama spordiala?>Ei
 34|Mitme veaga langeb korvpallur mängust välja? (kirjuta number sõna(de)ga)>Viiega
 35|Mida tähendab lühend EOK?>Eesti Olümpiakomitee

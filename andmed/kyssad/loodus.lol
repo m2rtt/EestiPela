@@ -25,7 +25,7 @@
 24|Milline on ainus Eestis aretatud koeratõug?>Eesti hagijas
 25|Mida uurib mükoloog?>Seeni
 26|Milline aine on taimede rohelise värvuse põhjuseks?>Klorofüll
-27|Mis on lindude kõie paremini arenenud aisting?>Nägemine
+27|Mis on lindude kõige paremini arenenud aisting?>Nägemine
 28|Millist looma nimetatakse ka udraseks?>Saarmast
 29|Millist neist imetajatest ei kohta saartel: põder, pruunkaru, saarmas, hunt?>Saarmas
 30|Milline on Eestis enim kasvatatav teravili?>Oder

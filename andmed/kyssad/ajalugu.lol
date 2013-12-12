@@ -13,7 +13,7 @@
 12|Mis elukutse esindajad kuulusid esimesse käsitööliste tsunfti Eestis?>Rätsepad
 13|Milline tuntud poliitik külastas Eestit 1965.a?>Kekkonen
 14|Millist 1925.a moodustatud organisatsiooni nimetati "polpol"?>Poliitilist politseid
-15|Milline 1473.a asutatud õigeusu klooster on asunud nii Eestis kui ka Venemaal?>Petseri klooster
+15|Milline 1473.a asutatud õigeusu klooster on asunud nii Eestis kui ka Venemaal?>Petseri
 16|Milline mägi Tallinnas kandis keskajal Ingeri bastioni nime?>Harjumägi
 17|Mis linn sai nime kohaliku kiriku kaitsepühaku Gross Sankt Johannise järgi?>Suure-Jaani
 18|Millises linnuses hävitas eestlaste malev 1220.a kogu Rootsi garnisoni?>Lihula
